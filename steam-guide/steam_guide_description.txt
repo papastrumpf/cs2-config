@@ -1,0 +1,24 @@
+[b]Transform your CS2 gameplay[/b] with this comprehensive competitive configuration used by high-level players. This all-in-one config package delivers [b]instant performance improvements[/b], streamlined buy binds, and professional movement mechanics that give you a real competitive edge.
+
+[h3]🎯 What Makes This Config Special[/h3]
+[list]
+[*][b]CAPSLOCK Modifier System[/b] - Transform your keyboard into a powerful buy menu
+[*][b]One-Key Full Buys[/b] - Lightning-fast purchases with single keypresses
+[*][b]Frame-Perfect Movement[/b] - Advanced jump configs for perfect timing
+[*][b]Sub-40ms Optimization[/b] - Network settings tuned for competitive play
+[*][b]Clutch Features[/b] - Volume boost, quick bomb drops, instant weapon switching
+[/list]
+
+[h3]📚 Complete Guide Coverage[/h3]
+This guide includes [b]everything[/b] from basic installation to advanced techniques:
+• Step-by-step installation with screenshots
+• Detailed keybind explanations
+• Troubleshooting common issues
+• Pro strategies and tips
+
+[h3]🎮 Perfect For[/h3]
+• [b]FaceIT grinders[/b] optimizing their setup
+• [b]Competitive players[/b] wanting every advantage
+• [b]Anyone tired[/b] of manually configuring settings
+
+[i]Download once, install in minutes, and experience the difference immediately. Join thousands of players already using this config to dominate their matches.[/i]

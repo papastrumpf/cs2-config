@@ -1,0 +1,245 @@
+[h1]🎮 Ultimate CS2 Competitive Configuration Guide[/h1]
+
+[b]Created by Papa Strumpf[/b]
+[i]Last Updated: 2024[/i]
+
+[hr][/hr]
+
+[h2]📋 Table of Contents[/h2]
+[list]
+[*]Overview
+[*]Installation Guide
+[*]Key Bindings & Features
+[*]Performance Optimizations
+[*]Buy Scripts System
+[*]Advanced Movement Config
+[*]Troubleshooting
+[/list]
+
+[hr][/hr]
+
+[h1]🎯 Overview[/h1]
+
+This comprehensive CS2 configuration is designed for competitive play, featuring optimized performance settings, custom keybinds, advanced buy scripts, and professional-grade movement mechanics. Whether you're grinding FaceIT or playing MM, this config will give you the edge you need.
+
+[h3]✨ Key Features[/h3]
+[list]
+[*][b]Performance Optimized[/b] - Reduced input lag, optimized network settings
+[*][b]Smart Buy System[/b] - One-key full buys with CAPSLOCK modifier system
+[*][b]Advanced Movement[/b] - Frame-perfect jump binds and movement optimization
+[*][b]Quality of Life[/b] - Clutch volume, quick weapon switch, bomb drop script
+[*][b]Network Optimized[/b] - Low latency settings for competitive play (40ms max ping)
+[/list]
+
+[hr][/hr]
+
+[h1]📥 Installation Guide[/h1]
+
+[h2]Step 1: Download Configuration[/h2]
+Download the configuration files from the GitHub repository and extract them.
+
+[h2]Step 2: Locate Your CS2 Config Directory[/h2]
+[code]
+Windows: C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
+Linux: ~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg
+[/code]
+
+[h2]Step 3: Copy Files[/h2]
+[list]
+[*]Copy [b]autoexec.cfg[/b] to your cfg directory
+[*]Copy the entire [b]movement[/b] folder to your cfg directory
+[/list]
+
+[h2]Step 4: Add Launch Options[/h2]
+Right-click CS2 in Steam → Properties → Launch Options
+[code]-high -threads 7 -fullscreen +r_drawparticles 0 -softparticlesdefaultoff -nojoy +r_dynamic 0 -limitvsconst +mat_queue_mode 2 +engine_low_latency_sleep_after_client_tick true[/code]
+
+[h2]Step 5: Verify Installation[/h2]
+Launch CS2 and open console (~). You should see configuration messages confirming the autoexec has loaded.
+
+[hr][/hr]
+
+[h1]⌨️ Key Bindings Overview[/h1]
+
+[h2]🏃 Movement & Actions[/h2]
+[table]
+[tr][th]Key[/th][th]Function[/th][th]Description[/th][/tr]
+[tr][td][b]SPACE[/b][/td][td]Jump Throw[/td][td]Perfect grenade throws[/td][/tr]
+[tr][td][b]CTRL[/b][/td][td]Duck[/td][td]Crouch[/td][/tr]
+[tr][td][b]SHIFT[/b][/td][td]Clutch Volume[/td][td]Hold to increase game volume[/td][/tr]
+[tr][td][b]ALT[/b][/td][td]Radar Scale[/td][td]Hold for better radar view[/td][/tr]
+[tr][td][b]C[/b][/td][td]Switch Hands[/td][td]Toggle left/right hand[/td][/tr]
+[tr][td][b]E[/b][/td][td]Defuse Zoom[/td][td]Hold while defusing[/td][/tr]
+[tr][td][b]K[/b][/td][td]AFK Toggle[/td][td]Anti-AFK movement[/td][/tr]
+[tr][td][b]MWHEEL[/b][/td][td]Jump[/td][td]Bunny hop ready[/td][/tr]
+[/table]
+
+[h2]🔫 Weapon & Equipment[/h2]
+[table]
+[tr][th]Key[/th][th]Normal Mode[/th][th]CAPSLOCK Mode (Buy)[/th][/tr]
+[tr][td][b]Q[/b][/td][td]Quick Switch[/td][td]-[/td][/tr]
+[tr][td][b]X[/b][/td][td]HE Grenade[/td][td]Buy HE[/td][/tr]
+[tr][td][b]F[/b][/td][td]Flashbang[/td][td]Buy Flash[/td][/tr]
+[tr][td][b]Z[/b][/td][td]Smoke[/td][td]Buy Smoke[/td][/tr]
+[tr][td][b]V[/b][/td][td]Molotov[/td][td]Buy Molotov[/td][/tr]
+[/table]
+
+[h2]🛒 Buy Scripts[/h2]
+[h3]Quick Buy Keys[/h3]
+[list]
+[*][b]M[/b] - Vest + Deagle
+[*][b],[/b] - Full CT Loadout (M4 + Full utility + Armor)
+[*][b].[/b] - Full T Loadout (AK + Full utility + Armor)
+[*][b]/[/b] - AWP Loadout (AWP + Armor + Utility)
+[/list]
+
+[h3]CAPSLOCK Buy Mode[/h3]
+Hold CAPSLOCK and press:
+[olist]
+[*][b]1[/b] - Rifle + Flash + Molotov + HE + Smoke
+[*][b]2[/b] - Rifle + Flash x2 + Molotov + Smoke  
+[*][b]3[/b] - Kevlar Vest
+[*][b]4[/b] - Kevlar + Helmet
+[*][b]5[/b] - Defuse Kit
+[/olist]
+
+[h2]🎮 Utility Keys[/h2]
+[list]
+[*][b]TAB[/b] - Scoreboard + Network Stats
+[*][b]T[/b] - Toggle Voice Enable/Disable
+[*][b]P[/b] - Toggle Crosshair Recoil
+[*][b]I[/b] - Infinite Weapon Inspect
+[*][b]MOUSE3[/b] - Quick Bomb Drop
+[*][b]MOUSE4[/b] - Player Ping
+[*][b]MOUSE5[/b] - Voice Record
+[/list]
+
+[hr][/hr]
+
+[h1]⚡ Performance Optimizations[/h1]
+
+This config includes multiple performance enhancements:
+
+[h2]Engine Optimizations[/h2]
+[list]
+[*][b]Low Latency Mode[/b] - Reduced input delay
+[*][b]Multi-Threading[/b] - Utilizes 7 CPU threads
+[*][b]Particle Reduction[/b] - Disabled unnecessary particles
+[*][b]Queue Mode 2[/b] - Optimal frame timing
+[/list]
+
+[h2]Network Settings[/h2]
+[list]
+[*]Optimized rates for competitive play
+[*]Maximum ping limit: 40ms
+[*]Low interp settings for better hit registration
+[*]Micro-stutter prevention enabled
+[/list]
+
+[h2]Visual Settings[/h2]
+[list]
+[*]Optimized radar scale and positioning
+[*]Custom crosshair configuration
+[*]Clean viewmodel settings
+[*]Disabled unnecessary visual effects
+[/list]
+
+[hr][/hr]
+
+[h1]🚀 Advanced Movement Configuration[/h1]
+
+[spoiler][b]⚠️ Note: Movement config requires sv_cheats 1 (works in private servers/lobbies only)[/b][/spoiler]
+
+[h2]Features[/h2]
+[list]
+[*]Frame-perfect jump timing
+[*]Multiple jump types (normal, jumpbind, longjump)
+[*]Direction-specific longjumps
+[*]Movement key cancellation system
+[/list]
+
+[h2]Setup Instructions[/h2]
+[olist]
+[*]Join a private lobby or server with sv_cheats enabled
+[*]Execute: [code]exec movement/setup[/code]
+[*]Config lasts ~6 hours, re-execute when needed
+[/olist]
+
+[h2]Movement Binds[/h2]
+The movement system provides various jump aliases that can be bound to any key:
+[list]
+[*][b]+j/-j[/b] - Standard jump
+[*][b]+jb/-jb[/b] - Jump bind (crouch release jump)
+[*][b]+lj/-lj[/b] - Longjump
+[*][b]+ljleft/-ljleft[/b] - Left longjump
+[*][b]+ljright/-ljright[/b] - Right longjump
+[*][b]mj[/b] - Mini jump
+[/list]
+
+[hr][/hr]
+
+[h1]🔧 Troubleshooting[/h1]
+
+[h2]Config Not Loading[/h2]
+[list]
+[*]Verify files are in correct directory
+[*]Check console for error messages
+[*]Make sure launch options are set correctly
+[*]Try manual execution: [code]exec autoexec[/code]
+[/list]
+
+[h2]Movement Config Issues[/h2]
+[list]
+[*]Only works with sv_cheats 1 enabled
+[*]Must be in lobby or private server
+[*]Re-execute after ~6 hours
+[*]Check that movement folder is properly copied
+[/list]
+
+[h2]Buy Scripts Not Working[/h2]
+[list]
+[*]CAPSLOCK must be held (not toggled)
+[*]Some weapons require specific team (CT/T)
+[*]Check money availability
+[*]Verify key bindings in console
+[/list]
+
+[hr][/hr]
+
+[h1]🎯 Pro Tips[/h1]
+
+[list]
+[*][b]Clutch Situations[/b]: Hold SHIFT to boost volume and hear footsteps better
+[*][b]Quick Defuse[/b]: Hold E while defusing for zoom effect
+[*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
+[*][b]Bomb Drop[/b]: MOUSE3 for quick bomb drops to teammates
+[*][b]Enemy Mute[/b]: Use the mute toggle for focused play
+[*][b]Network Info[/b]: TAB shows FPS and network stats during matches
+[/list]
+
+[hr][/hr]
+
+[h1]📝 Final Notes[/h1]
+
+This configuration is continuously updated for optimal competitive performance. The settings are designed for serious players who want every advantage in their matches.
+
+[h3]System Requirements[/h3]
+[list]
+[*]Recommended: 144Hz+ monitor
+[*]Mouse: 1600 DPI (adjust sensitivity if different)
+[*]Stable internet connection (<40ms ping)
+[/list]
+
+[h3]Credits[/h3]
+Created and maintained by [b]Papa Strumpf[/b]
+Movement config based on ruby rain's post-patch system
+
+[hr][/hr]
+
+[h2]🔗 Links[/h2]
+[list]
+[*]GitHub Repository: [url=https://github.com/yourusername/cs2-config]CS2 Config[/url]
+[*]Report Issues: Open an issue on GitHub
+[/list]
+
+[i]Good luck and have fun fragging![/i] 🎮
