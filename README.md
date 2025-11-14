@@ -100,3 +100,22 @@
 
 ## Support
 For any issues or questions, please open an issue in the repository. 
+
+
+
+# Video Settings
+- Boost Player Contrast ENABLED
+- V-Sync DISABLED
+- NVIDIA Reflex ENABLED+BOOST
+- FPS In Game 0
+- FPS In Menus 200
+- MSAA 2X MSAA
+- Global Shadow Quality LOW
+- Dynamic Shadows ALL
+- Model/Texture Detail LOW
+- Texture Filtering Mode - BILINEAR
+- Shader Detail LOW
+- Particle Detail LOW
+- Ambient Occlusion DISABLED
+- High Dynamic Range QUALITY
+- FidelityFX Super Resolution DISABLED (HIGHEST QUALITY)
