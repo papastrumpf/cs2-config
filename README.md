@@ -119,3 +119,6 @@ For any issues or questions, please open an issue in the repository.
 - Ambient Occlusion DISABLED
 - High Dynamic Range QUALITY
 - FidelityFX Super Resolution DISABLED (HIGHEST QUALITY)
+
+# Troubleshoot
+- If config acts weird load it in the main menu, then once again in the game. From then it should work as expected.
