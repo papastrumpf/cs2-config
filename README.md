@@ -35,7 +35,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **M** – Buy Vest + Deagle
 * **,** – Full CT Loadout (CT)
 * **.** – Full T Loadout (T)
-* **/** – AWP Loadout 🎯
+* **/** – AWP Loadout
 
 #### ⌨️ CapsLock Hold – Quick Buy System
 
@@ -43,7 +43,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **2** – AK/M4 + 2× Flash + Molotov + Smoke
 * **3** – Vest
 * **4** – Vest + Helmet
-* **5** – Defuser 🔧
+* **5** – Defuser
 
 ### 🧰 Utility
 
@@ -51,7 +51,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **T** – Toggle Voice Enable/Disable
 * **N** – Toggle Crosshair Recoil
 * **I** – Infinite Inspect
-* **CAPSLOCK** – Toggle Buy/Equip Mode 🎛️
+* **CAPSLOCK** – Toggle Buy/Equip Mode
 
 ---
 
@@ -92,7 +92,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * Optimized rate settings
 * Lower input latency
 * Custom interp controls
-* 40ms maxping limit ⚡
+* 40ms maxping limit
 
 ---
 
@@ -134,7 +134,7 @@ For issues, ideas, or improvements, feel free to open an issue in the repository
 
 * **Boost Player Contrast:** ENABLED
 * **V‑Sync:** DISABLED
-* **NVIDIA Reflex:** ENABLED + BOOST ⚡
+* **NVIDIA Reflex:** ENABLED + BOOST
 * **FPS In‑Game:** 0 (Unlimited)
 * **FPS In Menus:** 200
 * **MSAA:** 2×
