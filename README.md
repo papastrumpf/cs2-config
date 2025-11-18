@@ -152,4 +152,4 @@ For issues, ideas, or improvements, feel free to open an issue in the repository
 
 ## 🛠️ Troubleshooting
 
-* If anything behaves strangely, load the config once in the main menu and once again inside a match. After that, everything should work smoothly. ✔️
+* If anything behaves strangely, load the config once in the main menu and once again inside a match. After that, everything should work smoothly. ✔️ (required only once)
