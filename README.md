@@ -87,7 +87,7 @@
 
 3. Add the following launch options to CS2:
 ```
--high -threads 7 -fullscreen +r_drawparticles 0 -softparticlesdefaultoff -nojoy +r_dynamic 0 -limitvsconst +mat_queue_mode 2 +engine_low_latency_sleep_after_client_tick true
+-high -fullscreen +r_drawparticles 0 -r_emulate_g -softparticlesdefaultoff -novid -nohltv -nojoy +r_dynamic 0 +cl_forcepreload 1 -limitvsconst +mat_queue_mode 2 +engine_low_latency_sleep_after_client_tick true fps_max 0 +exec autoexec.cfg
 ```
 
 4. Launch CS2 and verify the config is loaded by checking the console
