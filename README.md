@@ -103,7 +103,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
    * **Windows:** `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`
    * **Linux:** `~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg`
 
-2. Drop `autoexec.cfg` into this folder.
+2. Copy `autoexec.cfg`, `guide` and `movement` folders into this folder.
 
 3. Add the following to your **Launch Options**:
 
@@ -111,7 +111,8 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 -high -fullscreen +r_drawparticles 0 -r_emulate_g -softparticlesdefaultoff -novid -nohltv -nojoy +r_dynamic 0 +cl_forcepreload 1 -limitvsconst +mat_queue_mode 2 +engine_low_latency_sleep_after_client_tick true fps_max 0 +exec autoexec.cfg
 ```
 
-4. Launch CS2 and confirm the config loaded via console.
+4. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
+5. If you do not see it, type in console `exec autoexec`.
 
 ---
 
