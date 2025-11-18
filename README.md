@@ -10,7 +10,7 @@
 - `C` - Switch Hands
 - `E` - Defuse Zoom (Hold)
 - `K` - AFK Movement Toggle
-- `MOUSE3` - Bomb Drop
+- `MOUSE3` - C4 Drop
 - `MOUSE4` - Player Ping
 - `MOUSE5` - Voice Record
 - `MWHEELUP/DOWN` - Jump
