@@ -38,7 +38,7 @@
 ### Utility
 - `TAB` - Network Stats + Scoreboard
 - `T` - Toggle Voice Enable/Disable
-- `P` - Toggle Crosshair Recoil
+- `N` - Toggle Crosshair Recoil
 - `I` - Infinite Inspect
 - `CAPSLOCK` - Hold/Release Toggle Buy/Equip Mode
 
