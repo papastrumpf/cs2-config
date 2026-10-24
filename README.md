@@ -9,12 +9,12 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 ### 🚶 Movement & Actions
 
 * **SPACE** – Jump
-* **CTRL** – Clutch Crouch: crouch + louder + brighter screen (Hold)
-* **SHIFT** – Clutch Walk: walk + louder + brighter screen (Hold)
+* **CTRL** – Clutch Crouch: crouch + louder game + quieter teammate voices + brighter screen (Hold)
+* **SHIFT** – Clutch Walk: walk + louder game + quieter teammate voices + brighter screen (Hold)
 * **ALT** – Big Radar + Teammate Names (Hold)
 * **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair. Not for pistols: you tap them anyway, and right click toggles Glock burst and R8 alt fire. Silencers never come off (`cl_silencer_mode 0`).
 * **C** – Switch Hands
-* **E** – Defuse Zoom + Louder (Hold)
+* **E** – Defuse Zoom + Louder game + Quieter voices (Hold)
 * **K** – AFK Movement Toggle
 * **MOUSE3** – C4 Drop + "Bomb dropped" radio call
 * **MOUSE4** – Player Ping
@@ -79,7 +79,8 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 * Balanced mixer for competitive soundscapes
 * Clearer footstep audio
-* Muted unnecessary sounds
+* Muted unnecessary sounds (music off, quieter agent radio lines)
+* Audible 10‑second bomb warning and low bomb music as timing cues
 * Optimized voice communication settings
 
 ### 🧩 Gameplay Enhancements
@@ -117,6 +118,12 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 5. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
 6. If you do not see it, type in console `exec autoexec`.
+
+---
+
+## 💡 Tips
+
+* **Silent reload:** hold **R** to reload without making noise (slower), since the September 2026 update. No bind needed.
 
 ---
 
