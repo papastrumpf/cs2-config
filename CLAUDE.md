@@ -12,6 +12,8 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - **`movement/setup.cfg`**: Binds W/A/S/D to `+w/+a/+s/+d` and runs `movement/nulls`.
 - **`movement/nulls.cfg`**: Null-bind (snap-tap style) aliases built on the analog `forwardback` / `rightleft` commands, so the last-pressed opposite key wins.
 - **`video/apply-video-settings.ps1`**: Applies the README video preset by editing only the quality keys in each account's `Steam\userdata\<id>\730\local\cfg\cs2_video.txt` (backup first, refuses while CS2 runs, `-DryRun` to preview). Video settings can't be set from `autoexec.cfg`.
+- **`fonts/apply-font.ps1`** + `fonts/BarlowSemiCondensed-*.ttf` (OFL): copies the font into `game\csgo\panorama\fonts` and adds a marked block to `fonts.conf` (`<fontpattern>` + `<match>` rules that prepend Barlow for `Stratum2`/`notosans`). Backs up `fonts.conf.original`, `-Restore`, `-DryRun`. CS2's `fonts.conf` only loads files matching a `<fontpattern>`, and Stratum2 is a `.uifont`, so renaming a TTF doesn't work.
+- **`install.ps1` / `install.bat`**: one-click install: copies `autoexec.cfg`, `movement/`, `guide/` into the CS2 cfg folder (backs up a different `autoexec.cfg`), runs the video and font scripts (`-SkipVideo`, `-SkipFont`, `-DryRun`), puts the launch options on the clipboard.
 - **`guide/guide.cfg`**: `echo` table of every bind, printed to the console on load as confirmation.
 - **`README.md`**: Public docs (binds, features, install, launch options, video settings).
 - **`steam-guide/`**: Text for the Steam Community guide (title, description, body in BBCode).

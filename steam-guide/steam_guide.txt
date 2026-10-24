@@ -35,6 +35,16 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 
 [h1]📥 Installation Guide[/h1]
 
+[h2]⚡ Quick Install (Windows)[/h2]
+[olist]
+[*]Download and extract the ZIP (Step 1 below)
+[*]Close CS2
+[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b]. It copies the config into CS2, applies the video settings and the custom font, and backs up anything it replaces
+[*]The launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
+[*]Start CS2 and press [b]~[/b]: you should see the bind table
+[/olist]
+Prefer doing it by hand? Follow the manual steps below.
+
 [h2]Step 1: Download the Config from GitHub[/h2]
 [olist]
 [*]Open the GitHub page with the [b]🔗 View config here![/b] link at the top of this guide
@@ -80,7 +90,12 @@ Sets the recommended video settings for you. It backs up your current video sett
 [/olist]
 [code]powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1[/code]
 
-[h2]Step 6: Verify Installation[/h2]
+[h2]Step 6: Custom Font (Optional, Windows)[/h2]
+Swaps the menu and HUD font for [b]Barlow Semi Condensed[/b]: as narrow as the original so it fits, with clearer numbers and letters. In the same PowerShell window, run:
+[code]powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1[/code]
+To undo, run it again with [b]-Restore[/b] at the end, or use Steam → CS2 → Properties → Installed Files → Verify integrity of game files. A CS2 update can reset the font, just run it again.
+
+[h2]Step 7: Verify Installation[/h2]
 [olist]
 [*]Start CS2 and press [b]~[/b] to open the console (if it doesn't open: Settings → Game → Enable Developer Console → Yes)
 [*]You should see the bind table and no "Unknown command" lines

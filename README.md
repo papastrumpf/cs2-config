@@ -101,6 +101,18 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 ## 📥 Installation
 
+### ⚡ Quick install (Windows)
+
+1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
+2. Close CS2.
+3. Open the extracted `cs2-config-main` folder and double-click **`install.bat`**. It copies the config into CS2, applies the [video settings](#️-video-settings-recommended) and the [custom font](#-custom-font-optional), and backs up anything it replaces.
+4. The launch options are now on your clipboard: paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
+5. Start CS2 and press `~`: you should see the bind table.
+
+To skip parts, run `install.ps1 -SkipVideo` and/or `-SkipFont` from PowerShell. Add `-DryRun` to only see what it would do.
+
+### 🛠️ Manual install
+
 1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
 
 2. Open your CS2 config directory (in Steam: right-click **Counter-Strike 2** → **Manage** → **Browse local files** → `game` → `csgo` → `cfg`):
@@ -122,8 +134,26 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
 ```
 
-6. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
-7. If you do not see it, type in console `exec autoexec`.
+6. *(Optional, Windows)* Apply the [custom font](#-custom-font-optional) the same way:
+
+```
+powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1
+```
+
+7. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
+8. If you do not see it, type in console `exec autoexec`.
+
+---
+
+## 🔤 Custom Font (Optional)
+
+Swaps CS2's menu and HUD font for **Barlow Semi Condensed**: as narrow as the original, so it fits, but with clearer numbers and letters. Characters it doesn't have (Cyrillic, Asian) still use the original fonts.
+
+* Apply: `powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1` (CS2 closed), or let `install.bat` do it.
+* Undo: run it with `-Restore`, or Steam → CS2 → **Properties** → **Installed Files** → **Verify integrity of game files**.
+* A CS2 update can reset the font: just run it again.
+* Font changes only touch font files, not gameplay. The community considers them VAC-safe, but Valve has never officially said so.
+* Font: [Barlow](https://github.com/jpt/barlow), SIL Open Font License (`fonts/OFL.txt`).
 
 ---
 
