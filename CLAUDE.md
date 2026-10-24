@@ -4,62 +4,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is a CS2 (Counter-Strike 2) configuration repository that contains customized game settings optimized for competitive play. The configuration includes custom keybinds, performance optimizations, buy scripts, and movement mechanics enhancements.
+A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybinds, buy scripts, network/audio/HUD settings, and null-bind movement. There is no build or test tooling; everything is Source 2 `.cfg` script.
 
 ## Key Files and Structure
 
-- **`autoexec.cfg`**: Main configuration file that contains all customizations including keybinds, buy scripts, network settings, and performance optimizations
-- **`movement/`**: Directory containing advanced movement configuration files
-  - `setup.cfg`: Main movement config with jump aliases and binds
-  - `setup_async.cfg`: Asynchronous execution component
-  - `tick0.cfg` through `tick10.cfg`: Frame-perfect timing configurations
-  - `final.cfg`: Final movement settings
+- **`autoexec.cfg`**: Main config. Holds all binds, aliases, buy scripts, crosshair/viewmodel, radar/HUD, sound, network and damage-prediction settings. At the end it runs `exec movement/setup` and `exec guide/guide`, then `host_writeconfig`.
+- **`movement/setup.cfg`**: Binds W/A/S/D to `+w/+a/+s/+d` and runs `movement/nulls`.
+- **`movement/nulls.cfg`**: Null-bind (snap-tap style) aliases built on the analog `forwardback` / `rightleft` commands, so the last-pressed opposite key wins.
+- **`guide/guide.cfg`**: `echo` table of every bind, printed to the console on load as confirmation.
+- **`README.md`**: Public docs (binds, features, install, launch options, video settings).
+- **`steam-guide/`**: Text for the Steam Community guide (title, description, body in BBCode).
 
 ## Configuration System Architecture
 
-### Script System
-The configuration uses Source Engine's alias system to create complex multi-action binds:
-- **Toggle aliases**: Switch between states (e.g., `mute-enemy-team_on/off`)
-- **Hold/Release actions**: Different behavior on key press/release (e.g., `+incvol/-incvol`)
-- **Mode switching**: CAPSLOCK acts as a modifier key to switch between equipment and buy modes
-- **Chained actions**: Multiple commands executed in sequence
+### Script patterns
+- **Toggle aliases**: an alias rebinds itself, e.g. `mute-enemy-team_on/off`, `toggle_inspect`.
+- **Hold/release**: `+name`/`-name` alias pairs run on press/release, e.g. `+bomb-drop`, `+switchw`, `+incvol`, `+custom_alt`, `+defusezoom`.
+- **CAPSLOCK modifier**: `+secondaryaction` rebinds 1–5 and X/F/Z/V to buy aliases (`keyX`, `customBuy1`…); `-secondaryaction` restores the equip binds (`defX`, `def1`…). `-secondaryaction` is also run once on load so the equip binds exist even with an empty saved key file (fresh install).
+- **Shared aliases**: when a bind is set both directly and from a `def*` alias, point both at the same named alias (e.g. `knife-inspect` for key 3) so CAPSLOCK release doesn't overwrite it.
+- **Nested quotes don't work** in CS2 cfg (`alias x "bind y "z""` breaks). Use a helper alias instead.
 
-### Movement System
-The movement configuration implements advanced techniques:
-- Frame-perfect jump timing using `exec_async` and tick-based configs
-- Multiple jump types: normal jump, jump-bind, longjump with various directions
-- Movement key cancellation system for precise control
-- Requires `sv_cheats 1` for the async execution system
+### Movement
+- Null binds only (`movement/nulls.cfg`). The old `exec_async` / tick-based / `sv_cheats` system and mouse_x-triggered longjump/jumpbug scripts are not part of this repo; don't re-add mouse-triggered movement.
+- `autoexec.cfg` still contains a `mouse_x`-based space jumpthrow and mousewheel `+myjump` binds.
+
+## Matchmaking Constraints (2026)
+
+- Only add settings that work in official matchmaking. Skip `sv_cheats`, server-only (`sv_*`, `mp_*`, `bot_*`), debug/visualisation and devonly cvars. Server cvars are fine only when clearly commented as "local/practice only" (e.g. `sv_clockcorrection_msecs`).
+- Aug 2024: Valve blocks binds that fire multiple movement/attack inputs from one key press (classic jumpthrow, `+duck;+jump`, null binds using `+left/+right`) and may kick for them on official servers. The `forwardback`/`rightleft` null binds work around this, so treat them as a risk on official servers.
+- Legacy CS:GO network cvars (`cl_interp`, `cl_interp_ratio`, `cl_updaterate`, `cl_cmdrate`) don't affect CS2. `cl_net_buffer_ticks` is the current buffering control.
+- `rate` max in CS2 is 786432.
+- Research cvars against 2025–2026 sources (Valve patch notes, the Valve wiki cvar list, prosettings.net, csdb.gg) before adding them; many "pro" tips online are placebo or locked.
 
 ## Common Development Tasks
 
-When modifying configurations:
-
-1. **Testing Changes**: 
-   - Make changes to the relevant `.cfg` file
-   - In CS2 console: `exec autoexec` to reload configuration
-   - For movement changes: Re-execute `exec movement/setup` in lobby
-
-2. **Adding New Binds**:
-   - Add bind commands to `autoexec.cfg`
-   - Use alias system for complex multi-action binds
-   - Follow existing patterns for toggle/hold actions
-
-3. **Modifying Buy Scripts**:
-   - Buy binds are organized with CAPSLOCK as modifier
-   - Primary buy scripts use `,` (CT) and `.` (T) keys
-   - Individual grenade buys use X, F, Z, V keys
-
-## Important Implementation Notes
-
-- The configuration requires specific launch parameters to function properly
-- Movement config uses `sv_cheats 1` which only works in private servers/lobbies
-- Network settings are optimized for low ping (max 40ms) competitive play
-- Some features like the AFK movement script use toggle mechanics that persist until manually disabled
-- The configuration modifies console activation and developer mode settings
+1. **Testing changes**: copy files to `...\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg\`, then in the CS2 console run `exec autoexec`. Check a bind with `bind <key>`, and a cvar by typing its name.
+2. **Adding binds**: add to `autoexec.cfg`, following the existing comment-header style (`// Title` + one-line description). Check the key isn't already bound (including inside `def*`/`key*` aliases).
+3. **Keep docs in sync**: when binds change, update `README.md`, `guide/guide.cfg` and `steam-guide/steam_guide.txt` too.
+4. **Buy scripts**: `,` CT loadout, `.` T loadout, `/` AWP, `M` vest+deagle; CAPSLOCK + 1–5 / X/F/Z/V for quick buys.
 
 ## Configuration Dependencies
 
-- CS2 must be launched with the specified launch parameters for full functionality
-- Movement system requires re-execution after ~6 hours due to engine limitations
-- Some settings may need adjustment based on individual hardware (e.g., sensitivity at 1600 DPI)
+- Launch options (see `README.md`) must include `+exec autoexec.cfg`.
+- A fresh CS2 install resets the saved key file (`cs2_user_keys_0_slot0.vcfg`), so anything not bound directly in `autoexec.cfg` on load will be missing.
+- Sensitivity is set for 1600 DPI.

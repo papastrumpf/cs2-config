@@ -94,6 +94,7 @@ Launch CS2 and open console (~). You should see configuration messages confirmin
 [/list]
 
 [h3]CAPSLOCK Buy Mode[/h3]
+Holding CAPSLOCK also turns on the follow-recoil crosshair (off again on release).
 Hold CAPSLOCK and press:
 [olist]
 [*][b]1[/b] - Rifle + Flash + Molotov + HE + Smoke
@@ -107,8 +108,9 @@ Hold CAPSLOCK and press:
 [list]
 [*][b]TAB[/b] - Scoreboard + Network Stats
 [*][b]T[/b] - Toggle Voice Enable/Disable
-[*][b]P[/b] - Toggle Crosshair Recoil
+[*][b]N[/b] - Toggle Crosshair Recoil
 [*][b]I[/b] - Infinite Weapon Inspect
+[*][b]L[/b] - Say "Get Leetify" in all chat
 [*][b]MOUSE3[/b] - Quick Bomb Drop
 [*][b]MOUSE4[/b] - Player Ping
 [*][b]MOUSE5[/b] - Voice Record

@@ -51,7 +51,8 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **T** – Toggle Voice Enable/Disable
 * **N** – Toggle Crosshair Recoil
 * **I** – Infinite Inspect
-* **CAPSLOCK** – Toggle Buy/Equip Mode
+* **L** – Say "Get Leetify" in all chat
+* **CAPSLOCK** – Toggle Buy/Equip Mode + Follow Recoil Crosshair (Hold)
 
 ---
 
