@@ -9,14 +9,14 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 ### 🚶 Movement & Actions
 
 * **SPACE** – Jump
-* **CTRL** – Duck
-* **SHIFT** – Clutch Volume Boost (Hold)
+* **CTRL** – Clutch Crouch: crouch + louder + brighter screen (Hold)
+* **SHIFT** – Clutch Walk: walk + louder + brighter screen (Hold)
 * **ALT** – Big Radar + Teammate Names (Hold)
 * **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair.
 * **C** – Switch Hands
 * **E** – Defuse Zoom (Hold)
 * **K** – AFK Movement Toggle
-* **MOUSE3** – C4 Drop
+* **MOUSE3** – C4 Drop + "Bomb dropped" radio call
 * **MOUSE4** – Player Ping
 * **MOUSE5** – Voice Record
 * **MWHEEL UP/DOWN** – Jump
