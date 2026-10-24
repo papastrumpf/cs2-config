@@ -54,6 +54,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **I** – Infinite Inspect
 * **J** – Toggle Enemy Voice Mute
 * **L** – Say "Get Leetify" in all chat
+* **P** – Mic Test (Toggle). Check your mic works before a match: press P, hold MOUSE5 and talk, and you hear yourself. Press P again to turn it off.
 * **CAPSLOCK** – Buy/Equip Mode (Hold)
 
 ---
