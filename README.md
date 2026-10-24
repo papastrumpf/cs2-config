@@ -11,7 +11,8 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **SPACE** – Jump
 * **CTRL** – Duck
 * **SHIFT** – Clutch Volume Boost (Hold)
-* **ALT** – Big Radar + Teammate Names + Follow Recoil Crosshair (Hold)
+* **ALT** – Big Radar + Teammate Names (Hold)
+* **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold)
 * **C** – Switch Hands
 * **E** – Defuse Zoom (Hold)
 * **K** – AFK Movement Toggle

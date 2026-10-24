@@ -68,7 +68,8 @@ Launch CS2 and open console (~). You should see the bind table and no "Unknown c
 [tr][td][b]SPACE[/b][/td][td]Jump[/td][td]Throw on the way up for a consistent jumpthrow[/td][/tr]
 [tr][td][b]CTRL[/b][/td][td]Duck[/td][td]Crouch[/td][/tr]
 [tr][td][b]SHIFT[/b][/td][td]Clutch Volume[/td][td]Hold to increase game volume[/td][/tr]
-[tr][td][b]ALT[/b][/td][td]Radar + Names + Follow Recoil[/td][td]Hold for big radar, teammate names and follow-recoil crosshair[/td][/tr]
+[tr][td][b]ALT[/b][/td][td]Radar + Names[/td][td]Hold for big radar and teammate names[/td][/tr]
+[tr][td][b]MOUSE2[/b][/td][td]Right Click + Follow Recoil[/td][td]Hold for follow-recoil crosshair (normal right click still works)[/td][/tr]
 [tr][td][b]C[/b][/td][td]Switch Hands[/td][td]Toggle left/right hand[/td][/tr]
 [tr][td][b]E[/b][/td][td]Defuse Zoom[/td][td]Hold while defusing[/td][/tr]
 [tr][td][b]K[/b][/td][td]AFK Toggle[/td][td]Anti-AFK movement[/td][/tr]
@@ -204,7 +205,7 @@ No script needed: CS2 gives every grenade released on the way up of a jump the s
 [*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
 [*][b]Bomb Drop[/b]: MOUSE3 for quick bomb drops to teammates
 [*][b]Enemy Mute[/b]: Press J to toggle enemy voice for focused play
-[*][b]Spraying[/b]: Hold ALT to see the follow-recoil crosshair (plus big radar and names)
+[*][b]Spraying[/b]: Hold right click to see the follow-recoil crosshair
 [*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad
 [/list]
 
