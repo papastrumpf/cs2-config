@@ -79,7 +79,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 * Balanced mixer for competitive soundscapes
 * Clearer footstep audio
-* Muted unnecessary sounds (music and bomb/hostage music off, MVP music at 10%, quieter agent radio lines)
+* Muted unnecessary sounds (music and bomb/hostage music off, MVP music at 20%, quieter agent radio lines)
 * Audible 10‑second bomb warning (10%) as a timing cue
 * Optimized voice communication settings
 
