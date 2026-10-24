@@ -225,7 +225,7 @@ Report them so I can fix it: open an issue on GitHub or message me on Steam. Ple
 [list]
 [*][b]Clutch Situations[/b]: Hold SHIFT (walk) or CTRL (crouch) for louder footsteps, quieter teammate voices and a brighter screen for dark corners
 [*][b]Quick Defuse[/b]: Hold E while defusing for a bigger radar, louder footsteps and quieter teammate voices
-[*][b]Bomb Timing[/b]: The 10-second bomb warning is audible and the bomb music plays low, so you know when to defuse or save
+[*][b]Bomb Timing[/b]: The 10-second bomb warning stays audible (10%), so you know when to defuse or save
 [*][b]Silent Reload[/b]: Hold R to reload without making noise (slower), since the September 2026 update. No bind needed
 [*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
 [*][b]Bomb Drop[/b]: MOUSE3 drops the bomb, switches back to your weapon and tells your team "Bomb dropped"
