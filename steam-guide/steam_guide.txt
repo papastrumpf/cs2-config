@@ -178,7 +178,7 @@ No script needed: CS2 gives every grenade released on the way up of a jump the s
 [h2]Movement Issues[/h2]
 [list]
 [*]Check that the movement folder is properly copied
-[*]Console should print "Loaded null movement aliases."
+[*]Console should confirm the movement config loaded
 [*]Check binds with [code]bind w[/code] (should show +w)
 [/list]
 
@@ -195,18 +195,22 @@ No script needed: CS2 gives every grenade released on the way up of a jump the s
 [*]Verify key bindings in console
 [/list]
 
+[h2]Still Having Issues?[/h2]
+Report them so I can fix it: open an issue on GitHub or message me on Steam. Please include what isn't working and the console output after [code]exec autoexec[/code] (especially any "Unknown command" lines).
+
 [hr][/hr]
 
 [h1]🎯 Pro Tips[/h1]
 
 [list]
-[*][b]Clutch Situations[/b]: Hold SHIFT to walk with louder footsteps and a brighter screen for dark corners
-[*][b]Quick Defuse[/b]: Hold E while defusing for zoom effect
+[*][b]Clutch Situations[/b]: Hold SHIFT (walk) or CTRL (crouch) for louder footsteps and a brighter screen for dark corners
+[*][b]Quick Defuse[/b]: Hold E while defusing for a bigger radar and louder footsteps
 [*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
 [*][b]Bomb Drop[/b]: MOUSE3 drops the bomb, switches back to your weapon and tells your team "Bomb dropped"
 [*][b]Enemy Mute[/b]: Press J to toggle enemy voice for focused play
 [*][b]Spraying[/b]: Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray. Tap with just left click and the crosshair stays static. Don't use it with pistols: you tap them, so there's no spray to follow, and right click toggles Glock burst and R8 alt fire. Silencers on the M4A1-S and USP-S never come off (the config disables detaching).
 [*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad. Hold TAB to see them all plus the network quality graph
+[*][b]Jumpthrow[/b]: No bind needed, CS2 gives every grenade released on the way up of a jump the same trajectory
 [/list]
 
 [hr][/hr]
@@ -230,7 +234,7 @@ Created and maintained by [b]Papa Strumpf[/b]
 [h2]🔗 Links[/h2]
 [list]
 [*]GitHub Repository: [url=https://github.com/papastrumpf/cs2-config]CS2 Config[/url]
-[*]Report Issues: Open an issue on GitHub
+[*]Report Issues: Open an issue on GitHub or message me on Steam (include the console output after [code]exec autoexec[/code])
 [/list]
 
 [i]Good luck and have fun fragging![/i] 🎮
