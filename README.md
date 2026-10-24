@@ -105,11 +105,15 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
 2. Close CS2.
-3. Open the extracted `cs2-config-main` folder and double-click **`install.bat`**. It copies the config into CS2, applies the [video settings](#️-video-settings-recommended) and the [custom font](#-custom-font-optional), and backs up anything it replaces.
-4. The launch options are now on your clipboard: paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
+3. Open the extracted `cs2-config-main` folder, double-click **`install.bat`** and pick what to install:
+   * **1. Full install**: config + [video settings](#️-video-settings-recommended) + [custom font](#-custom-font-optional) (recommended, just press Enter)
+   * **2.** Config only · **3.** Video settings only · **4.** Config + video settings · **5.** Font only
+
+   It backs up anything it replaces.
+4. If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
 5. Start CS2 and press `~`: you should see the bind table.
 
-To skip parts, run `install.ps1 -SkipVideo` and/or `-SkipFont` from PowerShell. Add `-DryRun` to only see what it would do.
+Without the menu: `install.ps1 -Mode Full` (or `Config`, `Video`, `ConfigVideo`, `Font`). Add `-DryRun` to only see what it would do.
 
 ### 🛠️ Manual install
 

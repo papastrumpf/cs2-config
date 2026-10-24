@@ -39,8 +39,8 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 [olist]
 [*]Download and extract the ZIP (Step 1 below)
 [*]Close CS2
-[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b]. It copies the config into CS2, applies the video settings and the custom font, and backs up anything it replaces
-[*]The launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
+[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only. It backs up anything it replaces
+[*]If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
 [*]Start CS2 and press [b]~[/b]: you should see the bind table
 [/olist]
 Prefer doing it by hand? Follow the manual steps below.
