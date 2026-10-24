@@ -156,7 +156,7 @@ powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
 * **FPS In‑Game:** 0 (Unlimited)
 * **FPS In Menus:** 200
 * **MSAA:** 2×
-* **Shadow Quality:** LOW
+* **Shadow Quality:** VERY HIGH
 * **Dynamic Shadows:** ALL
 * **Model/Texture Detail:** LOW
 * **Texture Filtering:** BILINEAR
