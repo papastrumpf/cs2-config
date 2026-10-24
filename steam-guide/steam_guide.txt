@@ -1,7 +1,7 @@
 [h1]🎮 Ultimate CS2 Competitive Configuration Guide[/h1]
 
 [b]Created by Papa Strumpf[/b]
-[i]Last Updated: 2024[/i]
+[i]Last Updated: October 2026[/i]
 
 [hr][/hr]
 
@@ -12,7 +12,7 @@
 [*]Key Bindings & Features
 [*]Performance Optimizations
 [*]Buy Scripts System
-[*]Advanced Movement Config
+[*]Null-Bind Movement
 [*]Troubleshooting
 [/list]
 
@@ -26,7 +26,7 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 [list]
 [*][b]Performance Optimized[/b] - Reduced input lag, optimized network settings
 [*][b]Smart Buy System[/b] - One-key full buys with CAPSLOCK modifier system
-[*][b]Advanced Movement[/b] - Frame-perfect jump binds and movement optimization
+[*][b]Null-Bind Movement[/b] - Last pressed direction key wins for cleaner counter-strafes
 [*][b]Quality of Life[/b] - Clutch volume, quick weapon switch, bomb drop script
 [*][b]Network Optimized[/b] - Low latency settings for competitive play (40ms max ping)
 [/list]
@@ -48,6 +48,7 @@ Linux: ~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo
 [list]
 [*]Copy [b]autoexec.cfg[/b] to your cfg directory
 [*]Copy the entire [b]movement[/b] folder to your cfg directory
+[*]Copy the entire [b]guide[/b] folder to your cfg directory (prints the bind table on load)
 [/list]
 
 [h2]Step 4: Add Launch Options[/h2]
@@ -55,7 +56,7 @@ Right-click CS2 in Steam → Properties → Launch Options
 [code]-novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg[/code]
 
 [h2]Step 5: Verify Installation[/h2]
-Launch CS2 and open console (~). You should see configuration messages confirming the autoexec has loaded.
+Launch CS2 and open console (~). You should see the bind table and no "Unknown command" lines. If not, type [code]exec autoexec[/code].
 
 [hr][/hr]
 
@@ -64,10 +65,10 @@ Launch CS2 and open console (~). You should see configuration messages confirmin
 [h2]🏃 Movement & Actions[/h2]
 [table]
 [tr][th]Key[/th][th]Function[/th][th]Description[/th][/tr]
-[tr][td][b]SPACE[/b][/td][td]Jump Throw[/td][td]Perfect grenade throws[/td][/tr]
+[tr][td][b]SPACE[/b][/td][td]Jump[/td][td]Throw on the way up for a consistent jumpthrow[/td][/tr]
 [tr][td][b]CTRL[/b][/td][td]Duck[/td][td]Crouch[/td][/tr]
 [tr][td][b]SHIFT[/b][/td][td]Clutch Volume[/td][td]Hold to increase game volume[/td][/tr]
-[tr][td][b]ALT[/b][/td][td]Radar Scale[/td][td]Hold for better radar view[/td][/tr]
+[tr][td][b]ALT[/b][/td][td]Radar + Names + Follow Recoil[/td][td]Hold for big radar, teammate names and follow-recoil crosshair[/td][/tr]
 [tr][td][b]C[/b][/td][td]Switch Hands[/td][td]Toggle left/right hand[/td][/tr]
 [tr][td][b]E[/b][/td][td]Defuse Zoom[/td][td]Hold while defusing[/td][/tr]
 [tr][td][b]K[/b][/td][td]AFK Toggle[/td][td]Anti-AFK movement[/td][/tr]
@@ -94,7 +95,6 @@ Launch CS2 and open console (~). You should see configuration messages confirmin
 [/list]
 
 [h3]CAPSLOCK Buy Mode[/h3]
-Holding CAPSLOCK also turns on the follow-recoil crosshair (off again on release).
 Hold CAPSLOCK and press:
 [olist]
 [*][b]1[/b] - Rifle + Flash + Molotov + HE + Smoke
@@ -106,10 +106,11 @@ Hold CAPSLOCK and press:
 
 [h2]🎮 Utility Keys[/h2]
 [list]
-[*][b]TAB[/b] - Scoreboard + Network Stats
+[*][b]TAB[/b] - Scoreboard
 [*][b]T[/b] - Toggle Voice Enable/Disable
 [*][b]N[/b] - Toggle Crosshair Recoil
 [*][b]I[/b] - Infinite Weapon Inspect
+[*][b]J[/b] - Toggle Enemy Voice Mute
 [*][b]L[/b] - Say "Get Leetify" in all chat
 [*][b]MOUSE3[/b] - Quick Bomb Drop
 [*][b]MOUSE4[/b] - Player Ping
@@ -122,61 +123,44 @@ Hold CAPSLOCK and press:
 
 This config includes multiple performance enhancements:
 
-[h2]Engine Optimizations[/h2]
+[h2]Engine[/h2]
 [list]
-[*][b]Low Latency Mode[/b] - Reduced input delay
-[*][b]Multi-Threading[/b] - Utilizes 7 CPU threads
-[*][b]Particle Reduction[/b] - Disabled unnecessary particles
-[*][b]Queue Mode 2[/b] - Optimal frame timing
+[*][b]Low latency sleep[/b] - [code]engine_low_latency_sleep_after_client_tick true[/code] to cut micro-stutters (works with NVIDIA Reflex on)
+[*][b]Uncapped FPS[/b] - [code]fps_max 0[/code]
+[*][b]Telemetry when poor[/b] - Ping, packet loss and frame time only show up on the HUD when something is wrong
 [/list]
 
 [h2]Network Settings[/h2]
 [list]
-[*]Optimized rates for competitive play
+[*][code]rate 786432[/code] - CS2 maximum
+[*][code]cl_net_buffer_ticks 0[/code] - No extra buffering on a stable connection
+[*]Damage prediction off - Hit and kill effects only show after the server confirms them
 [*]Maximum ping limit: 40ms
-[*]Low interp settings for better hit registration
-[*]Micro-stutter prevention enabled
 [/list]
 
 [h2]Visual Settings[/h2]
 [list]
-[*]Optimized radar scale and positioning
-[*]Custom crosshair configuration
-[*]Clean viewmodel settings
-[*]Disabled unnecessary visual effects
+[*]Boost Player Contrast forced on
+[*]Crosshair using the new 2026 pixel-based settings
+[*]Optimized radar scale and clean viewmodel
+[*]Clean HUD (no loadout list, no avatars, no invite popups mid-match)
 [/list]
 
 [hr][/hr]
 
-[h1]🚀 Advanced Movement Configuration[/h1]
+[h1]🚀 Null-Bind Movement[/h1]
 
-[spoiler][b]⚠️ Note: Movement config requires sv_cheats 1 (works in private servers/lobbies only)[/b][/spoiler]
-
-[h2]Features[/h2]
+[h2]How It Works[/h2]
 [list]
-[*]Frame-perfect jump timing
-[*]Multiple jump types (normal, jumpbind, longjump)
-[*]Direction-specific longjumps
-[*]Movement key cancellation system
+[*]W/A/S/D use null binds: when you hold two opposite keys, the last one pressed wins
+[*]Built on the analog [code]forwardback[/code] / [code]rightleft[/code] commands, one movement command per bind
+[*]Loaded automatically by autoexec ([code]exec movement/setup[/code]), no sv_cheats needed
 [/list]
 
-[h2]Setup Instructions[/h2]
-[olist]
-[*]Join a private lobby or server with sv_cheats enabled
-[*]Execute: [code]exec movement/setup[/code]
-[*]Config lasts ~6 hours, re-execute when needed
-[/olist]
+[spoiler][b]⚠️ Note: Since August 2024 Valve says null binds and Snap Tap are not allowed and may kick for them on official servers. Use at your own risk in matchmaking, or remove the exec movement/setup line from autoexec.[/b][/spoiler]
 
-[h2]Movement Binds[/h2]
-The movement system provides various jump aliases that can be bound to any key:
-[list]
-[*][b]+j/-j[/b] - Standard jump
-[*][b]+jb/-jb[/b] - Jump bind (crouch release jump)
-[*][b]+lj/-lj[/b] - Longjump
-[*][b]+ljleft/-ljleft[/b] - Left longjump
-[*][b]+ljright/-ljright[/b] - Right longjump
-[*][b]mj[/b] - Mini jump
-[/list]
+[h2]Jumpthrow[/h2]
+No script needed: CS2 gives every grenade released on the way up of a jump the same trajectory. SPACE is a plain jump.
 
 [hr][/hr]
 
@@ -190,12 +174,16 @@ The movement system provides various jump aliases that can be bound to any key:
 [*]Try manual execution: [code]exec autoexec[/code]
 [/list]
 
-[h2]Movement Config Issues[/h2]
+[h2]Movement Issues[/h2]
 [list]
-[*]Only works with sv_cheats 1 enabled
-[*]Must be in lobby or private server
-[*]Re-execute after ~6 hours
-[*]Check that movement folder is properly copied
+[*]Check that the movement folder is properly copied
+[*]Console should print "Loaded null movement aliases."
+[*]Check binds with [code]bind w[/code] (should show +w)
+[/list]
+
+[h2]Grenade Keys Not Working After Reinstall[/h2]
+[list]
+[*]Run [code]exec autoexec[/code] once, it sets X/F/Z/V and 1-5 on load
 [/list]
 
 [h2]Buy Scripts Not Working[/h2]
@@ -215,8 +203,9 @@ The movement system provides various jump aliases that can be bound to any key:
 [*][b]Quick Defuse[/b]: Hold E while defusing for zoom effect
 [*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
 [*][b]Bomb Drop[/b]: MOUSE3 for quick bomb drops to teammates
-[*][b]Enemy Mute[/b]: Use the mute toggle for focused play
-[*][b]Network Info[/b]: TAB shows FPS and network stats during matches
+[*][b]Enemy Mute[/b]: Press J to toggle enemy voice for focused play
+[*][b]Spraying[/b]: Hold ALT to see the follow-recoil crosshair (plus big radar and names)
+[*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad
 [/list]
 
 [hr][/hr]
@@ -234,13 +223,12 @@ This configuration is continuously updated for optimal competitive performance. 
 
 [h3]Credits[/h3]
 Created and maintained by [b]Papa Strumpf[/b]
-Movement config based on ruby rain's post-patch system
 
 [hr][/hr]
 
 [h2]🔗 Links[/h2]
 [list]
-[*]GitHub Repository: [url=https://github.com/yourusername/cs2-config]CS2 Config[/url]
+[*]GitHub Repository: [url=https://github.com/papastrumpf/cs2-config]CS2 Config[/url]
 [*]Report Issues: Open an issue on GitHub
 [/list]
 

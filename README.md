@@ -8,10 +8,10 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 ### 🚶 Movement & Actions
 
-* **SPACE** – Jump Throw
+* **SPACE** – Jump
 * **CTRL** – Duck
 * **SHIFT** – Clutch Volume Boost (Hold)
-* **ALT** – Radar Scale Toggle (Hold)
+* **ALT** – Big Radar + Teammate Names + Follow Recoil Crosshair (Hold)
 * **C** – Switch Hands
 * **E** – Defuse Zoom (Hold)
 * **K** – AFK Movement Toggle
@@ -51,8 +51,9 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **T** – Toggle Voice Enable/Disable
 * **N** – Toggle Crosshair Recoil
 * **I** – Infinite Inspect
+* **J** – Toggle Enemy Voice Mute
 * **L** – Say "Get Leetify" in all chat
-* **CAPSLOCK** – Toggle Buy/Equip Mode + Follow Recoil Crosshair (Hold)
+* **CAPSLOCK** – Buy/Equip Mode (Hold)
 
 ---
 
@@ -81,7 +82,6 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 ### 🧩 Gameplay Enhancements
 
-* Precision jump‑throw script
 * Fast bomb‑drop macro
 * AFK prevention system
 * Automatic clutch volume boost
@@ -92,7 +92,6 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 * Optimized rate settings
 * Lower input latency
-* Custom interp controls
 * 40ms maxping limit
 
 ---

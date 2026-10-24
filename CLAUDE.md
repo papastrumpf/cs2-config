@@ -26,7 +26,7 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 
 ### Movement
 - Null binds only (`movement/nulls.cfg`). The old `exec_async` / tick-based / `sv_cheats` system and mouse_x-triggered longjump/jumpbug scripts are not part of this repo; don't re-add mouse-triggered movement.
-- `autoexec.cfg` still contains a `mouse_x`-based space jumpthrow and mousewheel `+myjump` binds.
+- SPACE is plain `+jump` (CS2 gives a consistent jumpthrow on the way up); mousewheel uses `+myjump`.
 
 ## Matchmaking Constraints (2026)
 
@@ -34,6 +34,8 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - Aug 2024: Valve blocks binds that fire multiple movement/attack inputs from one key press (classic jumpthrow, `+duck;+jump`, null binds using `+left/+right`) and may kick for them on official servers. The `forwardback`/`rightleft` null binds work around this, so treat them as a risk on official servers.
 - Legacy CS:GO network cvars (`cl_interp`, `cl_interp_ratio`, `cl_updaterate`, `cl_cmdrate`) don't affect CS2. `cl_net_buffer_ticks` is the current buffering control.
 - `rate` max in CS2 is 786432.
+- Sept 2026 crosshair update: use `cl_crosshair_length`, `cl_crosshair_gap`, `cl_crosshair_thickness`, `cl_crosshaircolor_a` (pixel values). `cl_crosshaircolor`, `cl_crosshairgap` and `cl_crosshair_outlinethickness` are gone; `cl_crosshairsize/thickness/alpha` are leftovers.
+- Confirmed "Unknown command" in build 10955: `cl_autowepswitch`, `cl_playerspraydisable`, `cl_join_advertise`. `cl_interp` is locked. Check new cvars against an in-game `exec autoexec` log before keeping them.
 - Research cvars against 2025–2026 sources (Valve patch notes, the Valve wiki cvar list, prosettings.net, csdb.gg) before adding them; many "pro" tips online are placebo or locked.
 
 ## Common Development Tasks

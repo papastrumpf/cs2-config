@@ -4,7 +4,7 @@
 [list]
 [*][b]CAPSLOCK Modifier System[/b] - Transform your keyboard into a powerful buy menu
 [*][b]One-Key Full Buys[/b] - Lightning-fast purchases with single keypresses
-[*][b]Frame-Perfect Movement[/b] - Advanced jump configs for perfect timing
+[*][b]Null-Bind Movement[/b] - Last pressed direction key wins
 [*][b]Sub-40ms Optimization[/b] - Network settings tuned for competitive play
 [*][b]Clutch Features[/b] - Volume boost, quick bomb drops, instant weapon switching
 [/list]
