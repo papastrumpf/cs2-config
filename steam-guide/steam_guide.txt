@@ -230,7 +230,7 @@ Report them so I can fix it: open an issue on GitHub or message me on Steam. Ple
 [*][b]Fast Weapon Switch[/b]: Use Q for instant weapon cycling
 [*][b]Bomb Drop[/b]: MOUSE3 drops the bomb, switches back to your weapon and tells your team "Bomb dropped"
 [*][b]Enemy Mute[/b]: Press J to toggle enemy voice for focused play
-[*][b]Spraying[/b]: Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray. Tap with just left click and the crosshair stays static. Don't use it with pistols: you tap them, so there's no spray to follow, and right click toggles Glock burst and R8 alt fire. Silencers on the M4A1-S and USP-S never come off (the config disables detaching).
+[*][b]Spraying[/b]: Hold right + left click together when spraying so the crosshair follows your spray. Tap with just left click and the crosshair stays static. Don't use it with pistols: you tap them, so there's no spray to follow, and right click toggles Glock burst and R8 alt fire. Silencers on the M4A1-S and USP-S never come off (the config disables detaching).
 [*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad. Hold TAB to see them all plus the network quality graph
 [*][b]Mic Check[/b]: Not sure your mic works? Press P, hold MOUSE5 and talk, and you hear yourself. Press P again to turn it off before the match
 [*][b]Jumpthrow[/b]: No bind needed, CS2 gives every grenade released on the way up of a jump the same trajectory
