@@ -116,8 +116,14 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 -novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg
 ```
 
-5. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
-6. If you do not see it, type in console `exec autoexec`.
+5. *(Optional, Windows)* Apply the recommended video settings: close CS2, open the extracted `cs2-config-main` folder, click the File Explorer address bar, type `powershell` and press Enter, then run the command below. It backs up your video settings first and keeps your resolution and refresh rate. See [Video Settings](#️-video-settings-recommended).
+
+```
+powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
+```
+
+6. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
+7. If you do not see it, type in console `exec autoexec`.
 
 ---
 

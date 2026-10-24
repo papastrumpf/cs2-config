@@ -70,7 +70,17 @@ From the extracted [b]cs2-config-main[/b] folder, copy these into your [b]cfg[/b
 [/olist]
 [code]-novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg[/code]
 
-[h2]Step 5: Verify Installation[/h2]
+[h2]Step 5: Apply Video Settings (Optional, Windows)[/h2]
+Sets the recommended video settings for you. It backs up your current video settings first and keeps your resolution and refresh rate.
+[olist]
+[*]Close CS2
+[*]Open the extracted [b]cs2-config-main[/b] folder
+[*]Click the File Explorer address bar, type [b]powershell[/b] and press Enter
+[*]Paste this and press Enter:
+[/olist]
+[code]powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1[/code]
+
+[h2]Step 6: Verify Installation[/h2]
 [olist]
 [*]Start CS2 and press [b]~[/b] to open the console (if it doesn't open: Settings → Game → Enable Developer Console → Yes)
 [*]You should see the bind table and no "Unknown command" lines
