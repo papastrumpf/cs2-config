@@ -155,3 +155,4 @@ For issues, ideas, or improvements, feel free to open an issue in the repository
 ## 🛠️ Troubleshooting
 
 * If anything behaves strangely, load the config once in the main menu and once again inside a match. After that, everything should work smoothly. ✔️ (required only once)
+* Still having issues? Report them so I can fix it: [open an issue](https://github.com/papastrumpf/cs2-config/issues) or message me on [Steam](https://steamcommunity.com/id/_papastrumpf). Please include what isn't working and the console output after `exec autoexec` (especially any "Unknown command" lines). 🙏
