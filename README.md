@@ -12,7 +12,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **CTRL** – Duck
 * **SHIFT** – Clutch Volume Boost (Hold)
 * **ALT** – Big Radar + Teammate Names (Hold)
-* **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold)
+* **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair.
 * **C** – Switch Hands
 * **E** – Defuse Zoom (Hold)
 * **K** – AFK Movement Toggle
