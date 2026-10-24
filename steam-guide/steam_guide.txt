@@ -52,7 +52,7 @@ Linux: ~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo
 
 [h2]Step 4: Add Launch Options[/h2]
 Right-click CS2 in Steam → Properties → Launch Options
-[code]-high -threads 7 -fullscreen +r_drawparticles 0 -softparticlesdefaultoff -nojoy +r_dynamic 0 -limitvsconst +mat_queue_mode 2 +engine_low_latency_sleep_after_client_tick true[/code]
+[code]-novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg[/code]
 
 [h2]Step 5: Verify Installation[/h2]
 Launch CS2 and open console (~). You should see configuration messages confirming the autoexec has loaded.
