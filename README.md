@@ -144,6 +144,12 @@ For issues, ideas, or improvements, feel free to open an issue in the repository
 
 # 🖥️ Video Settings (Recommended)
 
+Apply them automatically: close CS2, then run this from the repo folder. It backs up your `cs2_video.txt` and only changes the quality settings below (your resolution, refresh rate and monitor stay the same). Add `-DryRun` to only see what would change.
+
+```
+powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
+```
+
 * **Boost Player Contrast:** ENABLED
 * **V‑Sync:** DISABLED
 * **NVIDIA Reflex:** ENABLED + BOOST

@@ -11,6 +11,7 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - **`autoexec.cfg`**: Main config. Holds all binds, aliases, buy scripts, crosshair/viewmodel, radar/HUD, sound, network and damage-prediction settings. At the end it runs `exec movement/setup` and `exec guide/guide`, then `host_writeconfig`.
 - **`movement/setup.cfg`**: Binds W/A/S/D to `+w/+a/+s/+d` and runs `movement/nulls`.
 - **`movement/nulls.cfg`**: Null-bind (snap-tap style) aliases built on the analog `forwardback` / `rightleft` commands, so the last-pressed opposite key wins.
+- **`video/apply-video-settings.ps1`**: Applies the README video preset by editing only the quality keys in each account's `Steam\userdata\<id>\730\local\cfg\cs2_video.txt` (backup first, refuses while CS2 runs, `-DryRun` to preview). Video settings can't be set from `autoexec.cfg`.
 - **`guide/guide.cfg`**: `echo` table of every bind, printed to the console on load as confirmation.
 - **`README.md`**: Public docs (binds, features, install, launch options, video settings).
 - **`steam-guide/`**: Text for the Steam Community guide (title, description, body in BBCode).
