@@ -71,7 +71,7 @@ Launch CS2 and open console (~). You should see the bind table and no "Unknown c
 [tr][td][b]ALT[/b][/td][td]Radar + Names[/td][td]Hold for big radar and teammate names[/td][/tr]
 [tr][td][b]MOUSE2[/b][/td][td]Right Click + Follow Recoil[/td][td]Hold for follow-recoil crosshair (normal right click still works)[/td][/tr]
 [tr][td][b]C[/b][/td][td]Switch Hands[/td][td]Toggle left/right hand[/td][/tr]
-[tr][td][b]E[/b][/td][td]Defuse Zoom[/td][td]Hold while defusing[/td][/tr]
+[tr][td][b]E[/b][/td][td]Defuse Zoom + Louder[/td][td]Hold while defusing for a bigger radar and louder footsteps[/td][/tr]
 [tr][td][b]K[/b][/td][td]AFK Toggle[/td][td]Anti-AFK movement[/td][/tr]
 [tr][td][b]MWHEEL[/b][/td][td]Jump[/td][td]Bunny hop ready[/td][/tr]
 [/table]
@@ -107,7 +107,7 @@ Hold CAPSLOCK and press:
 
 [h2]🎮 Utility Keys[/h2]
 [list]
-[*][b]TAB[/b] - Scoreboard
+[*][b]TAB[/b] - Scoreboard + Network Graphs (hold)
 [*][b]T[/b] - Toggle Voice Enable/Disable
 [*][b]N[/b] - Toggle Crosshair Recoil
 [*][b]I[/b] - Infinite Weapon Inspect
@@ -206,7 +206,7 @@ No script needed: CS2 gives every grenade released on the way up of a jump the s
 [*][b]Bomb Drop[/b]: MOUSE3 drops the bomb, switches back to your weapon and tells your team "Bomb dropped"
 [*][b]Enemy Mute[/b]: Press J to toggle enemy voice for focused play
 [*][b]Spraying[/b]: Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray. Tap with just left click and the crosshair stays static.
-[*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad
+[*][b]Network Info[/b]: Ping, packet loss and frame time pop up on the HUD only when they get bad. Hold TAB to see them all plus the network quality graph
 [/list]
 
 [hr][/hr]

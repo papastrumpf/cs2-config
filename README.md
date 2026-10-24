@@ -14,7 +14,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **ALT** – Big Radar + Teammate Names (Hold)
 * **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair.
 * **C** – Switch Hands
-* **E** – Defuse Zoom (Hold)
+* **E** – Defuse Zoom + Louder (Hold)
 * **K** – AFK Movement Toggle
 * **MOUSE3** – C4 Drop + "Bomb dropped" radio call
 * **MOUSE4** – Player Ping
@@ -48,7 +48,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 ### 🧰 Utility
 
-* **TAB** – Network Stats + Scoreboard
+* **TAB** – Scoreboard + Network Graphs (Hold)
 * **T** – Toggle Voice Enable/Disable
 * **N** – Toggle Crosshair Recoil
 * **I** – Infinite Inspect
