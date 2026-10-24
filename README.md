@@ -12,7 +12,7 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **CTRL** – Clutch Crouch: crouch + louder + brighter screen (Hold)
 * **SHIFT** – Clutch Walk: walk + louder + brighter screen (Hold)
 * **ALT** – Big Radar + Teammate Names (Hold)
-* **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair.
+* **MOUSE2** – Right Click + Follow Recoil Crosshair (Hold). Hold right + left click together when spraying (if it feels good) so the crosshair follows your spray; tap with just left click for a static crosshair. Not for pistols: you tap them anyway, and right click toggles Glock burst and R8 alt fire. Silencers never come off (`cl_silencer_mode 0`).
 * **C** – Switch Hands
 * **E** – Defuse Zoom + Louder (Hold)
 * **K** – AFK Movement Toggle
