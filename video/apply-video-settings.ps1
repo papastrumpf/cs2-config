@@ -18,7 +18,7 @@ $preset = [ordered]@{
     'setting.videocfg_texture_detail'    = '0'  # Model/Texture Detail: Low
     'setting.videocfg_particle_detail'   = '0'  # Particle Detail: Low
     'setting.videocfg_ao_detail'         = '0'  # Ambient Occlusion: Disabled
-    'setting.videocfg_hdr_detail'        = '-1' # HDR: Quality (3 = Performance), checked in game Oct 2026
+    'setting.videocfg_hdr_detail'        = '-1' # HDR: Quality (3 = Performance)
     'setting.videocfg_fsr_detail'        = '0'  # FSR: Disabled
     'setting.mat_vsync'                  = '0'  # V-Sync: Disabled
     'setting.r_low_latency'              = '2'  # NVIDIA Reflex: Enabled + Boost
