@@ -100,21 +100,23 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 
 ## 📥 Installation
 
-1. Navigate to your CS2 config directory:
+1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
+
+2. Open your CS2 config directory (in Steam: right-click **Counter-Strike 2** → **Manage** → **Browse local files** → `game` → `csgo` → `cfg`):
 
    * **Windows:** `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`
    * **Linux:** `~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg`
 
-2. Copy `autoexec.cfg`, `guide` and `movement` folders into this folder.
+3. Copy `autoexec.cfg`, `guide` and `movement` folders from the extracted `cs2-config-main` folder into this folder.
 
-3. Add the following to your **Launch Options**:
+4. Add the following to your **Launch Options** (Steam → right-click **Counter-Strike 2** → **Properties** → **General**):
 
 ```
 -novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg
 ```
 
-4. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
-5. If you do not see it, type in console `exec autoexec`.
+5. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
+6. If you do not see it, type in console `exec autoexec`.
 
 ---
 

@@ -35,28 +35,47 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 
 [h1]📥 Installation Guide[/h1]
 
-[h2]Step 1: Download Configuration[/h2]
-Download the configuration files from the GitHub repository and extract them.
+[h2]Step 1: Download the Config from GitHub[/h2]
+[olist]
+[*]Open the GitHub page with the [b]🔗 View config here![/b] link at the top of this guide
+[*]Click the green [b]<> Code[/b] button
+[*]Click [b]Download ZIP[/b]
+[*]Open your Downloads folder, right-click [b]cs2-config-main.zip[/b] → [b]Extract All…[/b] → [b]Extract[/b]
+[/olist]
 
-[h2]Step 2: Locate Your CS2 Config Directory[/h2]
+[h2]Step 2: Open Your CS2 cfg Folder[/h2]
+[olist]
+[*]In Steam, right-click [b]Counter-Strike 2[/b] → [b]Manage[/b] → [b]Browse local files[/b]
+[*]Open [b]game[/b] → [b]csgo[/b] → [b]cfg[/b]
+[/olist]
+Default locations:
 [code]
 Windows: C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
 Linux: ~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg
 [/code]
 
 [h2]Step 3: Copy Files[/h2]
+From the extracted [b]cs2-config-main[/b] folder, copy these into your [b]cfg[/b] folder (click [b]Replace[/b] if Windows asks):
 [list]
-[*]Copy [b]autoexec.cfg[/b] to your cfg directory
-[*]Copy the entire [b]movement[/b] folder to your cfg directory
-[*]Copy the entire [b]guide[/b] folder to your cfg directory (prints the bind table on load)
+[*][b]autoexec.cfg[/b]
+[*]the [b]movement[/b] folder
+[*]the [b]guide[/b] folder (prints the bind table on load)
 [/list]
 
 [h2]Step 4: Add Launch Options[/h2]
-Right-click CS2 in Steam → Properties → Launch Options
+[olist]
+[*]In Steam, right-click [b]Counter-Strike 2[/b] → [b]Properties[/b]
+[*]On the [b]General[/b] tab, find [b]Launch Options[/b]
+[*]Paste this:
+[/olist]
 [code]-novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg[/code]
 
 [h2]Step 5: Verify Installation[/h2]
-Launch CS2 and open console (~). You should see the bind table and no "Unknown command" lines. If not, type [code]exec autoexec[/code].
+[olist]
+[*]Start CS2 and press [b]~[/b] to open the console (if it doesn't open: Settings → Game → Enable Developer Console → Yes)
+[*]You should see the bind table and no "Unknown command" lines
+[*]If not, type [b]exec autoexec[/b] in the console and press Enter
+[/olist]
 
 [hr][/hr]
 
@@ -238,5 +257,7 @@ Created and maintained by [b]Papa Strumpf[/b]
 [*]GitHub Repository: [url=https://github.com/papastrumpf/cs2-config]CS2 Config[/url]
 [*]Report Issues: Open an issue on GitHub or message me on Steam (include the console output after [code]exec autoexec[/code])
 [/list]
+
+[b]Did this help?[/b] Rate it 👍 and add it to your ⭐ Favorites so more players can find it!
 
 [i]Good luck and have fun fragging![/i] 🎮
