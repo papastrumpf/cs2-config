@@ -34,6 +34,7 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - Aug 2024: Valve blocks binds that fire multiple movement/attack inputs from one key press (classic jumpthrow, `+duck;+jump`, null binds using `+left/+right`) and may kick for them on official servers. The `forwardback`/`rightleft` null binds work around this, so treat them as a risk on official servers.
 - Legacy CS:GO network cvars (`cl_interp`, `cl_interp_ratio`, `cl_updaterate`, `cl_cmdrate`) don't affect CS2. `cl_net_buffer_ticks` is the current buffering control.
 - `rate` max in CS2 is 786432.
+- Audio volume sliders aren't linear: the menu % is the square root of the cvar value (`snd_mvp_volume 0.2` shows 45%, `0.1` shows 32%). For a slider value of X%, set the cvar to (X/100)², e.g. 10% = `0.01`.
 - Sept 2026 crosshair update: use `cl_crosshair_length`, `cl_crosshair_gap`, `cl_crosshair_thickness`, `cl_crosshaircolor_a` (pixel values). `cl_crosshaircolor`, `cl_crosshairgap` and `cl_crosshair_outlinethickness` are gone; `cl_crosshairsize/thickness/alpha` are leftovers.
 - Confirmed "Unknown command" in build 10955: `cl_autowepswitch`, `cl_playerspraydisable`, `cl_join_advertise`. `cl_interp` is locked. Check new cvars against an in-game `exec autoexec` log before keeping them.
 - Research cvars against 2025–2026 sources (Valve patch notes, the Valve wiki cvar list, prosettings.net, csdb.gg) before adding them; many "pro" tips online are placebo or locked.
