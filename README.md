@@ -206,6 +206,30 @@ powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
 * **HDR:** QUALITY
 * **FSR:** DISABLED (Highest Quality)
 
+### 🖥️ Monitor Settings
+
+Monitor OSD settings for CS2 (Over Drive, Black Boost, FreeSync, NVIDIA Digital Vibrance): [Acer KG251Q 240 Hz](monitor/acer-kg251q-240hz.md). Most of it applies to any 240 Hz TN monitor.
+
+### 🟩 NVIDIA Profile (Optional)
+
+[`nvidia/cs2-nvidia-profile.nip`](nvidia/cs2-nvidia-profile.nip) sets the driver's **Counter-strike 2** profile (`cs2.exe` only, your other games aren't touched):
+
+* **Vertical Sync:** Force off
+* **Preferred refresh rate:** Highest available
+* **G-SYNC:** Off for CS2 (you run above your refresh rate anyway)
+* **Maximum pre-rendered frames:** 1 (only matters with Reflex off)
+* **Texture filtering quality:** High performance
+* **Power management:** Prefer maximum performance
+* **Shader cache size:** Unlimited
+
+Import it with [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector/releases): toolbar → **Import user defined profiles** → pick the file → **Apply changes**. Or from the repo folder:
+
+```
+nvidiaProfileInspector.exe -silentImport nvidia\cs2-nvidia-profile.nip
+```
+
+It replaces your current CS2 profile settings. A driver update or changing settings in the NVIDIA Control Panel can reset them: just import it again. Resizable BAR is left at the driver default (tests disagree on whether forcing it helps CS2).
+
 ---
 
 ## 🛠️ Troubleshooting
