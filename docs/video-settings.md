@@ -1,6 +1,6 @@
 [⬅ Back to README](../README.md)
 
-# 🖥️ Video Settings (Recommended)
+# 🎞️ Video Settings (Recommended)
 
 Apply them automatically: close CS2, then run this from the repo folder (or pick **Video settings** in `install.bat`). It backs up your `cs2_video.txt` and only changes the quality settings below (your resolution, refresh rate and monitor stay the same). Add `-DryRun` to only see what would change.
 
