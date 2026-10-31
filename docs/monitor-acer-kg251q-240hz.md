@@ -1,3 +1,5 @@
+[⬅ Back to README](../README.md)
+
 # 🖥️ Monitor Settings: Acer KG251Q (240 Hz)
 
 OSD settings for the **Acer KG251Q 240 Hz** (sold as **KG251QDbmiipx**, 24.5" TN, 1080p, 48–240 Hz FreeSync) tuned for CS2. The 75 Hz and 144 Hz KG251Q versions have a different menu; check your model in **OSD → Information** or the label on the back.
@@ -64,9 +66,9 @@ Monitor settings can't be applied from `autoexec.cfg` or a script: set them by h
 ## 🟩 NVIDIA Control Panel
 
 * **Change resolution:** Refresh rate **240 Hz**, **Use NVIDIA color settings**: Output color depth **8 bpc**, Output dynamic range **Full**.
-* **Adjust desktop color settings:** **Digital Vibrance 65–80%** makes player models pop against the maps. Most CS pros use something in this range. Purely visual, VAC-safe (it's a driver setting).
+* **Adjust desktop color settings:** **Digital Vibrance 65–100%** makes player models pop against the maps. Pros use anything in this range. At 100% strong colours (orange walls, red bricks) can flatten into one shade, so drop to ~80% if wall detail disappears. Purely visual, VAC-safe (it's a driver setting).
 * **Adjust desktop size and position** (only if you play stretched 4:3): Scaling **Full-screen**, Perform scaling on **GPU**.
-* **3D settings for CS2** (V-Sync off, G-SYNC off, highest refresh rate, max performance, unlimited shader cache): import the [NVIDIA profile](../README.md#-nvidia-profile-optional) instead of setting them by hand. Low Latency Mode doesn't matter with CS2's **NVIDIA Reflex** on.
+* **3D settings for CS2** (V-Sync off, G-SYNC off, highest refresh rate, max performance, unlimited shader cache): import the [NVIDIA profile](nvidia-profile.md) instead of setting them by hand. Low Latency Mode doesn't matter with CS2's **NVIDIA Reflex** on.
 
 ---
 

@@ -1,4 +1,4 @@
-# Applies the recommended CS2 video preset (see README "Video Settings").
+# Applies the recommended CS2 video preset (see docs/video-settings.md).
 # Only quality lines in cs2_video.txt are changed; resolution, refresh rate, GPU and monitor stay as they are.
 # Close CS2 first: the game rewrites cs2_video.txt when it exits.
 #

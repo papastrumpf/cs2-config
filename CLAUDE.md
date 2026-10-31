@@ -11,13 +11,14 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - **`autoexec.cfg`**: Main config. Holds all binds, aliases, buy scripts, crosshair/viewmodel, radar/HUD, sound, network and damage-prediction settings. At the end it runs `exec movement/setup` and `exec guide/guide`, then `host_writeconfig`.
 - **`movement/setup.cfg`**: Binds W/A/S/D to `+w/+a/+s/+d` and runs `movement/nulls`.
 - **`movement/nulls.cfg`**: Null-bind (snap-tap style) aliases built on the analog `forwardback` / `rightleft` commands, so the last-pressed opposite key wins.
-- **`video/apply-video-settings.ps1`**: Applies the README video preset by editing only the quality keys in each account's `Steam\userdata\<id>\730\local\cfg\cs2_video.txt` (backup first, refuses while CS2 runs, `-DryRun` to preview). Video settings can't be set from `autoexec.cfg`.
+- **`video/apply-video-settings.ps1`**: Applies the `docs/video-settings.md` preset by editing only the quality keys in each account's `Steam\userdata\<id>\730\local\cfg\cs2_video.txt` (backup first, refuses while CS2 runs, `-DryRun` to preview). Video settings can't be set from `autoexec.cfg`.
 - **`fonts/apply-font.ps1`** + `fonts/BarlowSemiCondensed-*.ttf` (OFL): copies the font into `game\csgo\panorama\fonts` and adds a marked block to `fonts.conf` (`<fontpattern>` + `<match>` rules that prepend Barlow for `Stratum2`/`notosans`). Backs up `fonts.conf.original`, `-Restore`, `-DryRun`. CS2's `fonts.conf` only loads files matching a `<fontpattern>`, and Stratum2 is a `.uifont`, so renaming a TTF doesn't work.
-- **`monitor/acer-kg251q-240hz.md`**: OSD + NVIDIA settings for the Acer KG251Q 240 Hz (KG251QDbmiipx), from its manual. FreeSync on forces Over Drive to Normal; 240 Hz needs DP or HDMI 2. OSD settings can't be scripted, it's a manual guide.
-- **`nvidia/cs2-nvidia-profile.nip`**: NVIDIA Profile Inspector export for the driver's `Counter-strike 2` profile. Values are decimal (NPI parses Dword with `uint.Parse`). Keep `<ProfileName>Counter-strike 2</ProfileName>` and `<string>cs2.exe</string>`: a non-merge import resets the profile and drops any app not listed in the file. `0x10835002` is Frame Rate Limiter V3 (an FPS cap), not a "low latency" flag; don't add it.
+- **`docs/monitor-acer-kg251q-240hz.md`**: OSD + NVIDIA settings for the Acer KG251Q 240 Hz (KG251QDbmiipx), from its manual. FreeSync on forces Over Drive to Normal; 240 Hz needs DP or HDMI 2. OSD settings can't be scripted, it's a manual guide.
+- **`nvidia/cs2-nvidia-profile.nip`**: NVIDIA Profile Inspector export for the driver's `Counter-strike 2` profile. Values are decimal (NPI parses Dword with `uint.Parse`). Keep `<ProfileName>Counter-strike 2</ProfileName>` and `<string>cs2.exe</string>`: a non-merge import resets the profile and drops any app not listed in the file. Latency and texture filtering settings are listed explicitly even at default values so one import restores everything after a reinstall. IDs that are easy to mix up: `0x10835000` (277041152) = Ultra Low Latency - Enabled and `0x0005F543` = its NVCP state; driver 621.01 rejects both (NVAPI_SETTING_NOT_FOUND), so they're not in the file. `0x10835002` (277041154) = Frame Rate Limiter FPS cap (keep 0). After an import, check the driver actually kept each setting (NVAPI `NvAPI_DRS_GetSetting` on the `Counter-strike 2` profile), since rejected IDs fail silently. Check IDs with `'0x{0:X8}' -f <decimal>` before editing. Download/import steps are in `docs/nvidia-profile.md`.
 - **`install.ps1` / `install.bat`**: installer with a menu (1 Full, 2 Config, 3 Video, 4 Config + Video, 5 Font; `-Mode` skips the menu, `-DryRun` previews). Config copies `autoexec.cfg`, `movement/`, `guide/` into the CS2 cfg folder (backs up a different `autoexec.cfg`) and puts the launch options on the clipboard; Video/Font run the scripts below.
 - **`guide/guide.cfg`**: `echo` table of every bind, printed to the console on load as confirmation.
-- **`README.md`**: Public docs (binds, features, install, launch options, video settings).
+- **`README.md`**: Public landing page: quick install (visible), binds/features/troubleshooting in collapsible `<details>` blocks (keep a blank line after `<summary>` so the markdown inside renders), and a table linking the guides.
+- **`docs/`**: The longer guides, each starting with a "Back to README" link: `manual-install.md` (launch options live here), `video-settings.md`, `nvidia-profile.md`, `monitor-acer-kg251q-240hz.md`, `custom-font.md`. Link between them with relative paths, not README anchors.
 - **`steam-guide/`**: Text for the Steam Community guide (title, description, body in BBCode).
 
 ## Configuration System Architecture
@@ -53,6 +54,6 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 
 ## Configuration Dependencies
 
-- Launch options (see `README.md`) must include `+exec autoexec.cfg`.
+- Launch options (see `docs/manual-install.md`; `install.ps1` copies the same string to the clipboard) must include `+exec autoexec.cfg`.
 - A fresh CS2 install resets the saved key file (`cs2_user_keys_0_slot0.vcfg`), so anything not bound directly in `autoexec.cfg` on load will be missing.
 - Sensitivity is set for 1600 DPI.

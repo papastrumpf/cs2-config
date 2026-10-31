@@ -2,9 +2,31 @@
 
 Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 configuration guide.✨
 
+**Guides:** [⚡ Quick install](#-quick-install-windows) · [🛠️ Manual install](docs/manual-install.md) · [🖥️ Video settings](docs/video-settings.md) · [🟩 NVIDIA profile](docs/nvidia-profile.md) · [🖥️ Monitor settings](docs/monitor-acer-kg251q-240hz.md) · [🔤 Custom font](docs/custom-font.md)
+
+Click a ▶ section below to expand it.
+
 ---
 
-## 🖱️ Key Bindings
+## ⚡ Quick install (Windows)
+
+1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
+2. Close CS2.
+3. Open the extracted `cs2-config-main` folder, double-click **`install.bat`** and pick what to install:
+   * **1. Full install**: config + [video settings](docs/video-settings.md) + [custom font](docs/custom-font.md) (recommended, just press Enter)
+   * **2.** Config only · **3.** Video settings only · **4.** Config + video settings · **5.** Font only
+
+   It backs up anything it replaces.
+4. If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
+5. Start CS2 and press `~`: you should see the bind table.
+6. *(Optional, NVIDIA)* Import the [NVIDIA profile](docs/nvidia-profile.md) with NVIDIA Profile Inspector.
+
+Without the menu: `install.ps1 -Mode Full` (or `Config`, `Video`, `ConfigVideo`, `Font`). Add `-DryRun` to only see what it would do. Linux or no script: [manual install](docs/manual-install.md).
+
+---
+
+<details>
+<summary><b>🖱️ Key Bindings</b></summary>
 
 ### 🚶 Movement & Actions
 
@@ -57,9 +79,14 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * **P** – Mic Test (Toggle). Check your mic works before a match: press P, hold MOUSE5 and talk, and you hear yourself. Press P again to turn it off.
 * **CAPSLOCK** – Buy/Equip Mode (Hold)
 
----
+### 💡 Tips
 
-## ⚙️ Configuration Features
+* **Silent reload:** hold **R** to reload without making noise (slower), since the September 2026 update. No bind needed.
+
+</details>
+
+<details>
+<summary><b>⚙️ Configuration Features</b></summary>
 
 ### 🚀 Performance Optimization
 
@@ -97,73 +124,27 @@ Welcome to the **optimized, well-researched, and MM ready** Counter‑Strike 2 c
 * Lower input latency
 * 40ms maxping limit
 
----
+</details>
 
-## 📥 Installation
+<details>
+<summary><b>🛠️ Troubleshooting</b></summary>
 
-### ⚡ Quick install (Windows)
+* If anything behaves strangely, load the config once in the main menu and once again inside a match. After that, everything should work smoothly. ✔️ (required only once)
+* Still having issues? Report them so I can fix it: [open an issue](https://github.com/papastrumpf/cs2-config/issues) or message me on [Steam](https://steamcommunity.com/id/_papastrumpf). Please include what isn't working and the console output after `exec autoexec` (especially any "Unknown command" lines). 🙏
 
-1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
-2. Close CS2.
-3. Open the extracted `cs2-config-main` folder, double-click **`install.bat`** and pick what to install:
-   * **1. Full install**: config + [video settings](#️-video-settings-recommended) + [custom font](#-custom-font-optional) (recommended, just press Enter)
-   * **2.** Config only · **3.** Video settings only · **4.** Config + video settings · **5.** Font only
-
-   It backs up anything it replaces.
-4. If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
-5. Start CS2 and press `~`: you should see the bind table.
-
-Without the menu: `install.ps1 -Mode Full` (or `Config`, `Video`, `ConfigVideo`, `Font`). Add `-DryRun` to only see what it would do.
-
-### 🛠️ Manual install
-
-1. Download this repo: click the green **<> Code** button → **Download ZIP**, then right-click `cs2-config-main.zip` → **Extract All…** → **Extract**.
-
-2. Open your CS2 config directory (in Steam: right-click **Counter-Strike 2** → **Manage** → **Browse local files** → `game` → `csgo` → `cfg`):
-
-   * **Windows:** `C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg`
-   * **Linux:** `~/.steam/steam/steamapps/common/Counter-Strike Global Offensive/game/csgo/cfg`
-
-3. Copy `autoexec.cfg`, `guide` and `movement` folders from the extracted `cs2-config-main` folder into this folder.
-
-4. Add the following to your **Launch Options** (Steam → right-click **Counter-Strike 2** → **Properties** → **General**):
-
-```
--novid -nojoy -fullscreen +fps_max 0 +engine_low_latency_sleep_after_client_tick true +exec autoexec.cfg
-```
-
-5. *(Optional, Windows)* Apply the recommended video settings: close CS2, open the extracted `cs2-config-main` folder, click the File Explorer address bar, type `powershell` and press Enter, then run the command below. It backs up your video settings first and keeps your resolution and refresh rate. See [Video Settings](#️-video-settings-recommended).
-
-```
-powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
-```
-
-6. *(Optional, Windows)* Apply the [custom font](#-custom-font-optional) the same way:
-
-```
-powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1
-```
-
-7. Launch CS2 and confirm the config loaded via console, you should see all available binding rendered in a table.
-8. If you do not see it, type in console `exec autoexec`.
+</details>
 
 ---
 
-## 🔤 Custom Font (Optional)
+## 📚 More Guides
 
-Swaps CS2's menu and HUD font for **Barlow Semi Condensed**: as narrow as the original, so it fits, but with clearer numbers and letters. Characters it doesn't have (Cyrillic, Asian) still use the original fonts.
-
-* Apply: `powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1` (CS2 closed), or let `install.bat` do it.
-* Undo: run it with `-Restore`, or Steam → CS2 → **Properties** → **Installed Files** → **Verify integrity of game files**.
-* A CS2 update can reset the font: just run it again.
-* Font changes only touch font files, not gameplay. The community considers them VAC-safe, but Valve has never officially said so.
-* Font: [Barlow](https://github.com/jpt/barlow), SIL Open Font License (`fonts/OFL.txt`).
-
----
-
-## 💡 Tips
-
-* **Silent reload:** hold **R** to reload without making noise (slower), since the September 2026 update. No bind needed.
+| Guide | What it covers |
+|---|---|
+| [🛠️ Manual install](docs/manual-install.md) | Copying the files yourself, launch options, Linux paths |
+| [🖥️ Video settings](docs/video-settings.md) | Recommended in-game video settings + script that applies them |
+| [🟩 NVIDIA profile](docs/nvidia-profile.md) | Download NVIDIA Profile Inspector and import the CS2 driver profile |
+| [🖥️ Monitor settings](docs/monitor-acer-kg251q-240hz.md) | OSD settings (Over Drive, Black Boost, FreeSync) for the Acer KG251Q 240 Hz, most apply to any 240 Hz TN |
+| [🔤 Custom font](docs/custom-font.md) | Barlow Semi Condensed menu/HUD font, apply and undo |
 
 ---
 
@@ -174,65 +155,4 @@ Swaps CS2's menu and HUD font for **Barlow Semi Condensed**: as narrow as the or
 * Includes numerous QoL improvements
 * Fully customizable – tweak freely!
 
----
-
-## 🔧 Support
-
 For issues, ideas, or improvements, feel free to open an issue in the repository. 🙌
-
----
-
-# 🖥️ Video Settings (Recommended)
-
-Apply them automatically: close CS2, then run this from the repo folder. It backs up your `cs2_video.txt` and only changes the quality settings below (your resolution, refresh rate and monitor stay the same). Add `-DryRun` to only see what would change.
-
-```
-powershell -ExecutionPolicy Bypass -File video\apply-video-settings.ps1
-```
-
-* **Boost Player Contrast:** ENABLED
-* **V‑Sync:** DISABLED
-* **NVIDIA Reflex:** ENABLED + BOOST
-* **FPS In‑Game:** 0 (Unlimited)
-* **FPS In Menus:** 200
-* **MSAA:** 2×
-* **Shadow Quality:** VERY HIGH
-* **Dynamic Shadows:** ALL
-* **Model/Texture Detail:** LOW
-* **Texture Filtering:** BILINEAR
-* **Shader Detail:** LOW
-* **Particle Detail:** LOW
-* **Ambient Occlusion:** DISABLED
-* **HDR:** QUALITY
-* **FSR:** DISABLED (Highest Quality)
-
-### 🖥️ Monitor Settings
-
-Monitor OSD settings for CS2 (Over Drive, Black Boost, FreeSync, NVIDIA Digital Vibrance): [Acer KG251Q 240 Hz](monitor/acer-kg251q-240hz.md). Most of it applies to any 240 Hz TN monitor.
-
-### 🟩 NVIDIA Profile (Optional)
-
-[`nvidia/cs2-nvidia-profile.nip`](nvidia/cs2-nvidia-profile.nip) sets the driver's **Counter-strike 2** profile (`cs2.exe` only, your other games aren't touched):
-
-* **Vertical Sync:** Force off
-* **Preferred refresh rate:** Highest available
-* **G-SYNC:** Off for CS2 (you run above your refresh rate anyway)
-* **Maximum pre-rendered frames:** 1 (only matters with Reflex off)
-* **Texture filtering quality:** High performance
-* **Power management:** Prefer maximum performance
-* **Shader cache size:** Unlimited
-
-Import it with [NVIDIA Profile Inspector](https://github.com/Orbmu2k/nvidiaProfileInspector/releases): toolbar → **Import user defined profiles** → pick the file → **Apply changes**. Or from the repo folder:
-
-```
-nvidiaProfileInspector.exe -silentImport nvidia\cs2-nvidia-profile.nip
-```
-
-It replaces your current CS2 profile settings. A driver update or changing settings in the NVIDIA Control Panel can reset them: just import it again. Resizable BAR is left at the driver default (tests disagree on whether forcing it helps CS2).
-
----
-
-## 🛠️ Troubleshooting
-
-* If anything behaves strangely, load the config once in the main menu and once again inside a match. After that, everything should work smoothly. ✔️ (required only once)
-* Still having issues? Report them so I can fix it: [open an issue](https://github.com/papastrumpf/cs2-config/issues) or message me on [Steam](https://steamcommunity.com/id/_papastrumpf). Please include what isn't working and the console output after `exec autoexec` (especially any "Unknown command" lines). 🙏
