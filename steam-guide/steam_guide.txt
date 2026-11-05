@@ -276,7 +276,7 @@ This configuration is continuously updated for optimal competitive performance. 
 [list]
 [*]Recommended: 144Hz+ monitor
 [*]Mouse: 1600 DPI, eDPI 288 (on another DPI: sensitivity = 288 ÷ your DPI). In game CS2 uses raw input, so Windows mouse settings don't change your aim. For the desktop, keep pointer speed at 6/11 and Enhance pointer precision off
-[*]Resolution: m_yaw is set for 1080x1080 stretched ([code]0.012375[/code]). Use [code]0.0165[/code] for 4:3 stretched or [code]0.022[/code] for native 16:9
+[*]Resolution: m_yaw stays at the default [code]0.022[/code], even on stretched. Optional compensation that matches native speed but feels much slower: [code]0.0165[/code] for 4:3, [code]0.012375[/code] for 1080x1080
 [*]Stable internet connection (<40ms ping)
 [/list]
 

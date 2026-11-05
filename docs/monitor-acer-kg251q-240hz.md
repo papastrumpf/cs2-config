@@ -67,7 +67,7 @@ Monitor settings can't be applied from `autoexec.cfg` or a script: set them by h
 
 * **Change resolution:** Refresh rate **240 Hz**, **Use NVIDIA color settings**: Output color depth **8 bpc**, Output dynamic range **Full**.
 * **Adjust desktop color settings:** **Digital Vibrance 65–100%** makes player models pop against the maps. Pros use anything in this range. At 100% strong colours (orange walls, red bricks) can flatten into one shade, so drop to ~80% if wall detail disappears. Purely visual, VAC-safe (it's a driver setting).
-* **Adjust desktop size and position** (only if you play stretched, 4:3 or 1080×1080): Scaling **Full-screen**, Perform scaling on **GPU**. How to make the custom resolution and the matching `m_yaw`: Stretched resolutions in [video settings](video-settings.md).
+* **Adjust desktop size and position** (only if you play stretched, 4:3 or 1080×1080): Scaling **Full-screen**, Perform scaling on **GPU**. How to make the custom resolution (and the optional `m_yaw` compensation): Stretched resolutions in [video settings](video-settings.md).
 * **3D settings for CS2** (V-Sync off, G-SYNC off, highest refresh rate, max performance, unlimited shader cache): import the [NVIDIA profile](nvidia-profile.md) instead of setting them by hand. Low Latency Mode doesn't matter with CS2's **NVIDIA Reflex** on.
 
 ---
