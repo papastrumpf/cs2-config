@@ -31,6 +31,12 @@ Use this if you don't want to run `install.bat`, or you're on Linux.
    powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1
    ```
 
-7. *(Optional, NVIDIA)* Import the [NVIDIA profile](nvidia-profile.md).
+7. *(Optional, Windows)* Apply the [Windows mouse/keyboard settings](video-settings.md) (pointer precision off, pointer speed 6/11, no Sticky Keys popup). Undo with `-Restore`:
 
-8. Launch CS2 and confirm the config loaded via console: you should see all binds in a table. If you don't, type `exec autoexec` in the console.
+   ```
+   powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1
+   ```
+
+8. *(Optional, NVIDIA)* Import the [NVIDIA profile](nvidia-profile.md).
+
+9. Launch CS2 and confirm the config loaded via console: you should see all binds in a table. If you don't, type `exec autoexec` in the console.
