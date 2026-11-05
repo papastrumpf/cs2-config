@@ -31,10 +31,11 @@ Use this if you don't want to run `install.bat`, or you're on Linux.
    powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1
    ```
 
-7. *(Optional, Windows)* Apply the [Windows mouse/keyboard settings](video-settings.md) (pointer precision off, pointer speed 6/11, no Sticky Keys popup). Undo with `-Restore`:
+7. *(Optional, Windows)* Apply the [Windows settings](video-settings.md) (pointer precision off, pointer speed 6/11, no Sticky Keys popup, Game Mode on, Game DVR off) and cs2.exe High priority (one admin prompt). Undo either with `-Restore`:
 
    ```
    powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1
+   powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1
    ```
 
 8. *(Optional, NVIDIA)* Import the [NVIDIA profile](nvidia-profile.md).

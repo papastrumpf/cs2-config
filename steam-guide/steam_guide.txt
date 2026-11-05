@@ -39,7 +39,7 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 [olist]
 [*]Download and extract the ZIP (Step 1 below)
 [*]Close CS2
-[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font + Windows mouse/keyboard + cs2.exe fullscreen optimizations off, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only, [b]6[/b] Windows mouse/keyboard only (pointer precision off, no Sticky Keys popup), [b]7[/b] cs2.exe "Disable fullscreen optimizations" only (tick or untick). It backs up anything it replaces
+[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font + Windows settings + cs2.exe fullscreen optimizations off, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only, [b]6[/b] Windows settings only (pointer precision off, no Sticky Keys popup, Game Mode on, Game DVR off, cs2.exe High priority), [b]7[/b] cs2.exe "Disable fullscreen optimizations" only (tick or untick). It backs up anything it replaces
 [*]If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
 [*]Start CS2 and press [b]~[/b]: you should see the bind table
 [/olist]
@@ -95,10 +95,12 @@ Swaps the menu and HUD font for [b]Barlow Semi Condensed[/b]: as narrow as the o
 [code]powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1[/code]
 To undo, run it again with [b]-Restore[/b] at the end, or use Steam → CS2 → Properties → Installed Files → Verify integrity of game files. A CS2 update can reset the font, just run it again.
 
-[h2]Step 7: Windows Mouse & Keyboard (Optional, Windows)[/h2]
-Sets pointer speed to 6/11 and turns Enhance pointer precision off (desktop only, CS2 uses raw input). Also turns off the Sticky Keys, Filter Keys and Toggle Keys shortcuts, so spamming SHIFT (clutch walk) can't pop up a window and drop you out of fullscreen. Already done if you ran the Full install. CS2 can stay open. In the same PowerShell window, run:
+[h2]Step 7: Windows Settings (Optional, Windows)[/h2]
+Sets pointer speed to 6/11 and turns Enhance pointer precision off (desktop only, CS2 uses raw input). Also turns off the Sticky Keys, Filter Keys and Toggle Keys shortcuts, so spamming SHIFT (clutch walk) can't pop up a window and drop you out of fullscreen. Turns Game Mode on and Xbox Game Bar background recording off. Already done if you ran the Full install. CS2 can stay open. In the same PowerShell window, run:
 [code]powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1[/code]
-To undo, run it again with [b]-Restore[/b] at the end.
+To start CS2 at High CPU priority every time (one admin prompt), run:
+[code]powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1[/code]
+To undo either one, run it again with [b]-Restore[/b] at the end.
 
 [h2]Step 8: Verify Installation[/h2]
 [olist]

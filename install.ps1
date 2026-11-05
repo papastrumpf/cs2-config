@@ -1,5 +1,6 @@
 # Installer: copies the config into CS2, applies the video preset, the custom font and the Windows
-# mouse/keyboard settings, then puts the launch options on your clipboard.
+# settings (mouse/keyboard, Game Mode, Game DVR, cs2.exe priority), then puts the launch options on your clipboard.
+# cs2.exe High priority writes to HKLM, so Full and option 6 show one admin (UAC) prompt.
 # Easiest way: double-click install.bat and pick an option. Close CS2 first.
 #
 # Usage:
@@ -41,12 +42,12 @@ Write-Host 'CS2 config installer' -ForegroundColor Cyan
 
 if (-not $Mode) {
     Write-Host ''
-    Write-Host '  1. Full install (config + video settings + font + Windows mouse/keyboard + fullscreen optimizations off)   [recommended]'
+    Write-Host '  1. Full install (config + video settings + font + Windows settings + fullscreen optimizations off)   [recommended]'
     Write-Host '  2. Config only'
     Write-Host '  3. Video settings only'
     Write-Host '  4. Config + video settings (no font)'
     Write-Host '  5. Font only'
-    Write-Host '  6. Windows mouse/keyboard only (pointer precision off, no Sticky Keys popup)'
+    Write-Host '  6. Windows settings only (mouse/keyboard, Game Mode on, Game DVR off, cs2.exe High priority)'
     Write-Host '  7. cs2.exe "Disable fullscreen optimizations" only: show, tick or untick'
     Write-Host '  Q. Quit'
     Write-Host ''
@@ -113,9 +114,13 @@ if ($doFont) {
 }
 
 if ($doWindows) {
-    Write-Host "`n[Windows mouse/keyboard]" -ForegroundColor Cyan
+    Write-Host "`n[Windows mouse/keyboard + gaming]" -ForegroundColor Cyan
     & (Join-Path $PSScriptRoot 'windows\apply-windows-input.ps1') -DryRun:$DryRun
     Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1 -Restore'
+
+    Write-Host "`n[cs2.exe CPU priority]" -ForegroundColor Cyan
+    & (Join-Path $PSScriptRoot 'windows\cs2-priority.ps1') -DryRun:$DryRun
+    Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1 -Restore'
 }
 
 if ($doFso) {

@@ -65,9 +65,9 @@
 
    | Option | Installs |
    |---|---|
-   | **1. Full install** *(recommended, just press Enter)* | Config + [video settings](docs/video-settings.md) + [custom font](docs/custom-font.md) + Windows mouse/keyboard + cs2.exe fullscreen optimizations off |
+   | **1. Full install** *(recommended, just press Enter)* | Config + [video settings](docs/video-settings.md) + [custom font](docs/custom-font.md) + Windows settings + cs2.exe fullscreen optimizations off |
    | **2.** Config only · **3.** Video only · **4.** Config + video · **5.** Font only | Just that part |
-   | **6.** Windows mouse/keyboard only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT ([details](docs/video-settings.md)) |
+   | **6.** Windows settings only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT, Game Mode on, Game DVR off, cs2.exe High priority (one admin prompt) ([details](docs/video-settings.md)) |
    | **7.** Fullscreen optimizations only | Ticks cs2.exe's "Disable fullscreen optimizations" (or unticks it again) ([details](docs/video-settings.md)) |
 
    It backs up anything it replaces.
@@ -174,7 +174,7 @@
 | Guide | What it covers |
 |---|---|
 | [🛠️&nbsp;Manual&nbsp;install](docs/manual-install.md) | Copy the files yourself, launch options, Linux paths |
-| [🎞️&nbsp;Video&nbsp;settings](docs/video-settings.md) | In-game video preset + script, fullscreen checklist, stretched res + `m_yaw`, mouse & keyboard script |
+| [🎞️&nbsp;Video&nbsp;settings](docs/video-settings.md) | In-game video preset + script, fullscreen checklist, stretched res + `m_yaw`, mouse/keyboard and Windows gaming scripts |
 | [🟩&nbsp;NVIDIA&nbsp;profile](docs/nvidia-profile.md) | Download Profile Inspector, import the CS2 driver profile |
 | [🖥️&nbsp;Monitor&nbsp;settings](docs/monitor-acer-kg251q-240hz.md) | Over Drive, Black Boost, FreeSync for 240 Hz TN monitors |
 | [🔤&nbsp;Custom&nbsp;font](docs/custom-font.md) | Clearer menu/HUD font, apply and undo |

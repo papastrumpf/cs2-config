@@ -4,6 +4,8 @@
 #   Keyboard: turns off the Sticky Keys (Shift 5x), Filter Keys (right Shift 8 s) and Toggle Keys (Num Lock 5 s)
 #             shortcuts, so a popup can't knock you out of fullscreen. SHIFT is the clutch-walk key.
 #             The features themselves are left as they are. Key repeat delay/rate isn't touched (no effect in game).
+#   Gaming:   Game Mode on, Xbox Game Bar captures and background recording (Game DVR) off. Win+Alt+R clips stop
+#             working. Fully applies after you sign out and back in.
 # The first run saves your current values to %LOCALAPPDATA%\cs2-config\windows-input.original.json for -Restore.
 #
 # Usage:
@@ -61,13 +63,27 @@ $hotkey     = 0x4  # *_HOTKEYACTIVE: the keyboard shortcut that turns it on
 $backupDir  = Join-Path $env:LOCALAPPDATA 'cs2-config'
 $backupFile = Join-Path $backupDir 'windows-input.original.json'
 
+# Per-user registry DWORDs. $null in a backup means "wasn't set" (Windows default), so -Restore removes it again.
+$regSettings = @(
+    @{ Label = 'Game Mode';                        Path = 'HKCU:\Software\Microsoft\GameBar';                         Name = 'AutoGameModeEnabled';      Value = 1 },
+    @{ Label = 'Game Mode allowed';          Path = 'HKCU:\Software\Microsoft\GameBar';                         Name = 'AllowAutoGameMode';        Value = 1 },
+    @{ Label = 'Game DVR';                         Path = 'HKCU:\System\GameConfigStore';                              Name = 'GameDVR_Enabled';          Value = 0 },
+    @{ Label = 'Game Bar captures';                Path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR'; Name = 'AppCaptureEnabled';        Value = 0 },
+    @{ Label = 'Background recording';             Path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR'; Name = 'HistoricalCaptureEnabled'; Value = 0 }
+)
+
+function Get-RegValue($s) {
+    try { return [int](Get-ItemProperty -Path $s.Path -Name $s.Name -ErrorAction Stop).($s.Name) } catch { return $null }
+}
+
 function Get-Current {
     [pscustomobject]@{
-        Speed  = $api::GetSpeed()
-        Mouse  = @($api::GetMouse())
-        Sticky = $api::GetSticky()
-        Filter = $api::GetFilter()
-        Toggle = $api::GetToggle()
+        Speed    = $api::GetSpeed()
+        Mouse    = @($api::GetMouse())
+        Sticky   = $api::GetSticky()
+        Filter   = $api::GetFilter()
+        Toggle   = $api::GetToggle()
+        Registry = @(for ($i = 0; $i -lt $regSettings.Count; $i++) { , (Get-RegValue $regSettings[$i]) })
     }
 }
 
@@ -85,7 +101,20 @@ function Set-All($t) {
     $api::SetSticky([uint32]$t.Sticky)
     $api::SetFilter([uint32]$t.Filter)
     $api::SetToggle([uint32]$t.Toggle)
+    # Backups from before these settings existed have no Registry list: leave them alone then
+    if ($null -eq $t.Registry) { return }
+    for ($i = 0; $i -lt $regSettings.Count; $i++) {
+        $s = $regSettings[$i]; $v = $t.Registry[$i]
+        if ($null -eq $v) {
+            Remove-ItemProperty -Path $s.Path -Name $s.Name -ErrorAction SilentlyContinue
+        } else {
+            if (-not (Test-Path $s.Path)) { New-Item -Path $s.Path -Force | Out-Null }
+            New-ItemProperty -Path $s.Path -Name $s.Name -Value ([int]$v) -PropertyType DWord -Force | Out-Null
+        }
+    }
 }
+
+function Format-Reg($v) { if ($null -eq $v) { 'not set (Windows default)' } else { "$v" } }
 
 function Show-Changes($from, $to) {
     $rows = @(
@@ -95,10 +124,16 @@ function Show-Changes($from, $to) {
         @('Filter Keys (right Shift 8 s)', (Format-Hotkey $from.Filter), (Format-Hotkey $to.Filter)),
         @('Toggle Keys (Num Lock 5 s)', (Format-Hotkey $from.Toggle), (Format-Hotkey $to.Toggle))
     )
+    if ($null -ne $to.Registry) {
+        for ($i = 0; $i -lt $regSettings.Count; $i++) {
+            $old = if ($null -ne $from.Registry) { $from.Registry[$i] } else { $null }
+            $rows += , @("$($regSettings[$i].Label) ($($regSettings[$i].Name))", (Format-Reg $old), (Format-Reg $to.Registry[$i]))
+        }
+    }
     $changed = 0
     foreach ($r in $rows) {
-        if ($r[1] -eq $r[2]) { Write-Host ("  {0,-30} {1} (no change)" -f $r[0], $r[1]) }
-        else { Write-Host ("  {0,-30} {1} -> {2}" -f $r[0], $r[1], $r[2]) -ForegroundColor Yellow; $changed++ }
+        if ($r[1] -eq $r[2]) { Write-Host ("  {0,-48} {1} (no change)" -f $r[0], $r[1]) }
+        else { Write-Host ("  {0,-48} {1} -> {2}" -f $r[0], $r[1], $r[2]) -ForegroundColor Yellow; $changed++ }
     }
     return $changed
 }
@@ -125,6 +160,7 @@ $target = [pscustomobject]@{
     Sticky = $current.Sticky -band (-bnot $hotkey) -band 0xFFFFFFFFL
     Filter = $current.Filter -band (-bnot $hotkey) -band 0xFFFFFFFFL
     Toggle = $current.Toggle -band (-bnot $hotkey) -band 0xFFFFFFFFL
+    Registry = @($regSettings | ForEach-Object { $_.Value })
 }
 
 $changed = Show-Changes $current $target

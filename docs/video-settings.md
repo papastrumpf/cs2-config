@@ -76,4 +76,24 @@ powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1
 * **Accessibility shortcuts (the script turns these off):** pressing SHIFT 5 times opens the Sticky Keys popup, which drops you out of fullscreen. SHIFT is the clutch-walk key, so this can happen mid-round. The script also turns off the Filter Keys (right Shift held 8 s) and Toggle Keys (Num Lock held 5 s) shortcuts. If you use one of these features yourself, it stays on; only the shortcut goes.
 * **Key repeat delay/rate:** leave it as is. CS2 only reads key presses and releases, so repeat only changes typing in the console and chat.
 
+## ⚡ Windows gaming settings
+
+The same script (and option **6** / **Full** in `install.bat`) also sets these. `-Restore` undoes them too.
+
+* **Game Mode:** **on**. Keeps Windows Update and background work quiet while you play.
+* **Xbox Game Bar captures and background recording (Game DVR):** **off**. Background recording costs GPU time. Win+Alt+R clips stop working. Fully applies after you sign out and back in.
+* **cs2.exe CPU priority:** **High**, every launch, through Windows' per-program setting (`Image File Execution Options\cs2.exe\PerfOptions`). It needs admin, so you get one UAC prompt. Expect a small gain at most. Not Realtime: that can starve mouse, keyboard and audio. Separate script, undo with `-Restore`:
+
+  ```
+  powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1
+  ```
+
+Set these yourself (they can't be scripted reliably):
+
+* **Do Not Disturb while gaming:** Settings → System → Notifications → turn on *Do Not Disturb automatically… when playing a game in full screen*, so a notification can't pull you out of fullscreen.
+* **Overlays:** turn off the ones you don't use (Discord, NVIDIA, RGB software popups). In the NVIDIA app, turn off **Game Filters and Photo Mode**, which cost up to 15% FPS. An overlay over the game can stop it from using the fast fullscreen path.
+* **Mouse:** polling rate **1000 Hz or higher** in the mouse software, and plug it into a rear motherboard USB port (no hubs, front panel or monitor ports).
+* **Core Isolation / Memory Integrity:** costs about 5–8% FPS in 2026 tests, but it's a security feature. Your choice, not something this config changes.
+* **Skip:** timer-resolution tools, HPET/`bcdedit` tweaks, MSI-mode/interrupt tweaks, Ultimate Performance power plan (Balanced is as good on a single-CCD X3D CPU). No measured CS2 benefit.
+
 **Next:** [NVIDIA profile](nvidia-profile.md) · [Monitor settings](monitor-acer-kg251q-240hz.md)
