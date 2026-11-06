@@ -6,6 +6,8 @@
 #             The features themselves are left as they are. Key repeat delay/rate isn't touched (no effect in game).
 #   Gaming:   Game Mode on, Xbox Game Bar captures and background recording (Game DVR) off. Win+Alt+R clips stop
 #             working. Fully applies after you sign out and back in.
+#   Sound:    Sound > Communications set to "Do nothing", so Windows doesn't turn the game down while Discord
+#             or another voice app is active (UserDuckingPreference = 3; Windows default: reduce by 80%).
 # The first run saves your current values to %LOCALAPPDATA%\cs2-config\windows-input.original.json for -Restore.
 #
 # Usage:
@@ -69,7 +71,9 @@ $regSettings = @(
     @{ Label = 'Game Mode allowed';          Path = 'HKCU:\Software\Microsoft\GameBar';                         Name = 'AllowAutoGameMode';        Value = 1 },
     @{ Label = 'Game DVR';                         Path = 'HKCU:\System\GameConfigStore';                              Name = 'GameDVR_Enabled';          Value = 0 },
     @{ Label = 'Game Bar captures';                Path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR'; Name = 'AppCaptureEnabled';        Value = 0 },
-    @{ Label = 'Background recording';             Path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR'; Name = 'HistoricalCaptureEnabled'; Value = 0 }
+    @{ Label = 'Background recording';             Path = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR'; Name = 'HistoricalCaptureEnabled'; Value = 0 },
+    # 0 = mute other sounds, 1 = reduce by 80% (default), 2 = reduce by 50%, 3 = do nothing
+    @{ Label = 'Call ducking';                     Path = 'HKCU:\Software\Microsoft\Multimedia\Audio';               Name = 'UserDuckingPreference';    Value = 3 }
 )
 
 function Get-RegValue($s) {
@@ -150,7 +154,7 @@ if ($Restore) {
     if ($DryRun) { Write-Host '  Dry run: nothing changed.'; exit 0 }
     Set-All $saved
     Remove-Item $backupFile
-    Write-Host '  Your old mouse/keyboard settings are back.' -ForegroundColor Green
+    Write-Host '  Your old mouse/keyboard, gaming and sound settings are back.' -ForegroundColor Green
     exit 0
 }
 
@@ -180,6 +184,17 @@ if (-not (Test-Path $backupFile)) {
     New-Item -ItemType Directory -Force $backupDir | Out-Null
     $current | ConvertTo-Json | Set-Content -Encoding utf8 $backupFile
     Write-Host "  Saved your old values: $backupFile"
+} else {
+    # A backup from an older version of this script lacks the settings added since: save their current
+    # (not yet changed) values too, so -Restore puts them back instead of removing them.
+    $saved = Get-Content $backupFile -Raw | ConvertFrom-Json
+    if ($null -ne $saved.Registry -and @($saved.Registry).Count -lt $regSettings.Count) {
+        $reg = @($saved.Registry)
+        for ($i = $reg.Count; $i -lt $regSettings.Count; $i++) { $reg += , $current.Registry[$i] }
+        $saved.Registry = $reg
+        $saved | ConvertTo-Json | Set-Content -Encoding utf8 $backupFile
+        Write-Host "  Added the new settings' old values to $backupFile"
+    }
 }
 Set-All $target
 Write-Host '  Applied. Undo with -Restore.' -ForegroundColor Green

@@ -31,7 +31,7 @@ Use this if you don't want to run `install.bat`, or you're on Linux.
    powershell -ExecutionPolicy Bypass -File fonts\apply-font.ps1
    ```
 
-7. *(Optional, Windows)* Apply the [Windows settings](video-settings.md) (pointer precision off, pointer speed 6/11, no Sticky Keys popup, Game Mode on, Game DVR off) and cs2.exe High priority (one admin prompt). Undo either with `-Restore`:
+7. *(Optional, Windows)* Apply the [Windows settings](video-settings.md) (pointer precision off, pointer speed 6/11, no Sticky Keys popup, Game Mode on, Game DVR off, game audio not turned down during calls) and cs2.exe High priority (one admin prompt). Undo either with `-Restore`:
 
    ```
    powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1
@@ -40,4 +40,11 @@ Use this if you don't want to run `install.bat`, or you're on Linux.
 
 8. *(Optional, NVIDIA)* Import the [NVIDIA profile](nvidia-profile.md).
 
-9. Launch CS2 and confirm the config loaded via console: you should see all binds in a table. If you don't, type `exec autoexec` in the console.
+9. *(Optional, Windows)* Set up the [Audio EQ](audio-eq.md). The first command installs Equalizer APO and ReaPlugs if they're missing (tick your headset in Equalizer APO's Device Selector), the second sets the headset to 48 kHz:
+
+   ```
+   powershell -ExecutionPolicy Bypass -File audio\apply-equalizer-apo.ps1 -Headphones LogitechGProX -InstallMissing
+   powershell -ExecutionPolicy Bypass -File audio\set-device-format.ps1
+   ```
+
+10. Launch CS2 and confirm the config loaded via console: you should see all binds in a table. If you don't, type `exec autoexec` in the console.

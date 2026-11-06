@@ -82,6 +82,7 @@ The same script (and option **6** / **Full** in `install.bat`) also sets these. 
 
 * **Game Mode:** **on**. Keeps Windows Update and background work quiet while you play.
 * **Xbox Game Bar captures and background recording (Game DVR):** **off**. Background recording costs GPU time. Win+Alt+R clips stop working. Fully applies after you sign out and back in.
+* **Sound → Communications:** **Do nothing**. By default Windows turns the game down by 80% while Discord or another voice app is active, which buries footsteps exactly when your team is talking. EQ and compressor for footsteps: [Audio EQ](audio-eq.md).
 * **cs2.exe CPU priority:** **High**, every launch, through Windows' per-program setting (`Image File Execution Options\cs2.exe\PerfOptions`). It needs admin, so you get one UAC prompt. Expect a small gain at most. Not Realtime: that can starve mouse, keyboard and audio. Separate script, undo with `-Restore`:
 
   ```

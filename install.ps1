@@ -5,16 +5,22 @@
 #
 # Usage:
 #   powershell -ExecutionPolicy Bypass -File install.ps1                 # menu: choose what to install
-#   powershell -ExecutionPolicy Bypass -File install.ps1 -Mode Full      # no menu: Full, Config, Video, ConfigVideo, Font, Windows, Fso
+#   powershell -ExecutionPolicy Bypass -File install.ps1 -Mode Full      # no menu: Full, Config, Video, ConfigVideo, Font, Windows, Fso, Audio
 #   powershell -ExecutionPolicy Bypass -File install.ps1 -Mode Full -DryRun   # only show what would happen
 #   powershell -ExecutionPolicy Bypass -File install.ps1 -Mode Fso -Fso Unchecked   # tick/untick "Disable fullscreen optimizations"
+#   powershell -ExecutionPolicy Bypass -File install.ps1 -Mode Audio -Headphones LogitechGProX   # audio EQ setup (or -Headphones None)
 # Full ticks cs2.exe's "Disable fullscreen optimizations" (what most 2026 guides recommend). Option 7 switches it either way.
+# Option 9 (Audio) is not part of Full: it downloads and installs Equalizer APO and ReaPlugs if they're
+# missing (one admin prompt each, you tick your headset in Equalizer APO's Device Selector), writes the footstep
+# EQ, headphone correction and ReaComp compressor, and sets the headset to 48 kHz.
 
 param(
-    [ValidateSet('Full', 'Config', 'Video', 'ConfigVideo', 'Font', 'Windows', 'Fso')]
+    [ValidateSet('Full', 'Config', 'Video', 'ConfigVideo', 'Font', 'Windows', 'Fso', 'Audio')]
     [string]$Mode,
     [ValidateSet('Checked', 'Unchecked')]
     [string]$Fso,
+    [ValidateSet('LogitechGProX', 'None')]
+    [string]$Headphones,
     [switch]$DryRun
 )
 
@@ -49,11 +55,12 @@ if (-not $Mode) {
     Write-Host '  5. Font only'
     Write-Host '  6. Windows settings only (mouse/keyboard, Game Mode on, Game DVR off, cs2.exe High priority)'
     Write-Host '  7. cs2.exe "Disable fullscreen optimizations" only: show, tick or untick'
+    Write-Host '  9. Audio EQ: installs Equalizer APO + ReaComp if missing, footstep EQ, compressor, headset at 48 kHz'
     Write-Host '  Q. Quit'
     Write-Host ''
-    $modes = @{ '1' = 'Full'; '2' = 'Config'; '3' = 'Video'; '4' = 'ConfigVideo'; '5' = 'Font'; '6' = 'Windows'; '7' = 'Fso' }
+    $modes = @{ '1' = 'Full'; '2' = 'Config'; '3' = 'Video'; '4' = 'ConfigVideo'; '5' = 'Font'; '6' = 'Windows'; '7' = 'Fso'; '9' = 'Audio' }
     do {
-        $choice = (Read-Host 'Choose 1-7 (Enter = 1)').Trim()
+        $choice = (Read-Host 'Choose 1-9 (Enter = 1)').Trim()
         if ($choice -eq '') { $choice = '1' }
         if ($choice -match '^[qQ]$') { Write-Host 'Nothing installed.'; exit 0 }
     } until ($modes.ContainsKey($choice))
@@ -66,6 +73,7 @@ $doVideo   = $Mode -in 'Full', 'Video', 'ConfigVideo'
 $doFont    = $Mode -in 'Full', 'Font'
 $doWindows = $Mode -in 'Full', 'Windows'
 $doFso     = $Mode -in 'Full', 'Fso'
+$doAudio   = $Mode -eq 'Audio'
 if ($Mode -eq 'Full' -and -not $Fso) { $Fso = 'Checked' }
 Write-Host "`nInstalling: $Mode$(if ($DryRun) { ' (dry run)' })" -ForegroundColor Cyan
 
@@ -140,6 +148,29 @@ if ($doFso) {
     else { Write-Host '  Left as it is.' }
 }
 
+if ($doAudio) {
+    Write-Host "`n[Audio EQ (Equalizer APO)]" -ForegroundColor Cyan
+    if (-not $Headphones -and $interactive) {
+        Write-Host '  Headphone correction:'
+        Write-Host '  1. Logitech G PRO X (wired)'
+        Write-Host '  2. Other headphones (footstep EQ only, paste your own from autoeq.app later)'
+        Write-Host '  Enter = keep what''s installed (none on a first install)'
+        do { $pick = (Read-Host '  Choose').Trim() } until ($pick -in '', '1', '2')
+        $Headphones = @{ '' = $null; '1' = 'LogitechGProX'; '2' = 'None' }[$pick]
+    }
+    $eqArgs = @{ DryRun = $DryRun; InstallMissing = $true }
+    if ($Headphones) { $eqArgs.Headphones = $Headphones }
+    $global:LASTEXITCODE = 0
+    & (Join-Path $PSScriptRoot 'audio\apply-equalizer-apo.ps1') @eqArgs
+    $audioOk = $LASTEXITCODE -eq 0
+    if ($audioOk) {
+        Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File audio\apply-equalizer-apo.ps1 -Restore'
+        Write-Host "`n[Headset format]" -ForegroundColor Cyan
+        & (Join-Path $PSScriptRoot 'audio\set-device-format.ps1') -DryRun:$DryRun
+        Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File audio\set-device-format.ps1 -Restore'
+    }
+}
+
 # Launch options live in Steam's own files, so they are pasted by hand
 if ($doConfig) {
     Write-Host "`n[Launch options]" -ForegroundColor Cyan
@@ -153,6 +184,9 @@ if ($doConfig) {
     Write-Host "`nDone." -ForegroundColor Green
 } elseif ($doFso) {
     Write-Host "`nDone. Start CS2 to use the new setting." -ForegroundColor Green
+} elseif ($doAudio) {
+    if ($audioOk) { Write-Host "`nDone. Restart CS2 if it's running. Settings explained in docs\audio-eq.md." -ForegroundColor Green }
+    else { Write-Host "`nAudio EQ not applied, see above." -ForegroundColor Yellow }
 } else {
     Write-Host "`nDone. Start CS2 to see the changes." -ForegroundColor Green
 }

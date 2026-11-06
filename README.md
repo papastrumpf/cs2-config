@@ -8,7 +8,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/papastrumpf/cs2-config?style=flat-square)](https://github.com/papastrumpf/cs2-config/commits/main)
 [![Stars](https://img.shields.io/github/stars/papastrumpf/cs2-config?style=flat-square)](https://github.com/papastrumpf/cs2-config/stargazers)
 
-**[⚡ Install](#-quick-install-windows)** · **[🛠️ Manual&nbsp;install](docs/manual-install.md)** · **[🎞️ Video](docs/video-settings.md)** · **[🟩 NVIDIA](docs/nvidia-profile.md)** · **[🖥️ Monitor](docs/monitor-acer-kg251q-240hz.md)** · **[🔤 Font](docs/custom-font.md)**
+**[⚡ Install](#-quick-install-windows)** · **[🛠️ Manual&nbsp;install](docs/manual-install.md)** · **[🎞️ Video](docs/video-settings.md)** · **[🟩 NVIDIA](docs/nvidia-profile.md)** · **[🖥️ Monitor](docs/monitor-acer-kg251q-240hz.md)** · **[🎧 Audio](docs/audio-eq.md)** · **[🔤 Font](docs/custom-font.md)**
 
 </div>
 
@@ -67,8 +67,9 @@
    |---|---|
    | **1. Full install** *(recommended, just press Enter)* | Config + [video settings](docs/video-settings.md) + [custom font](docs/custom-font.md) + Windows settings + cs2.exe fullscreen optimizations off |
    | **2.** Config only · **3.** Video only · **4.** Config + video · **5.** Font only | Just that part |
-   | **6.** Windows settings only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT, Game Mode on, Game DVR off, cs2.exe High priority (one admin prompt) ([details](docs/video-settings.md)) |
+   | **6.** Windows settings only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT, Game Mode on, Game DVR off, game audio no longer turned down during Discord calls, cs2.exe High priority (one admin prompt) ([details](docs/video-settings.md)) |
    | **7.** Fullscreen optimizations only | Ticks cs2.exe's "Disable fullscreen optimizations" (or unticks it again) ([details](docs/video-settings.md)) |
+   | **9.** Audio EQ *(not part of Full)* | Installs Equalizer APO + the ReaComp compressor if missing (you tick your headset once), footstep EQ + headphone correction (Logitech G PRO X preset), headset at 48 kHz ([details](docs/audio-eq.md)) |
 
    It backs up anything it replaces.
 4. **Launch options:** they're now on your clipboard. Paste them in Steam → right-click **Counter-Strike 2** → **Properties** → **General** → **Launch Options**.
@@ -76,7 +77,7 @@
 6. *(Optional, NVIDIA)* Import the [NVIDIA profile](docs/nvidia-profile.md).
 
 > [!TIP]
-> Without the menu: `install.ps1 -Mode Full` (or `Config`, `Video`, `ConfigVideo`, `Font`). Add `-DryRun` to only see what it would do. Linux or no script: [manual install](docs/manual-install.md).
+> Without the menu: `install.ps1 -Mode Full` (or `Config`, `Video`, `ConfigVideo`, `Font`, `Audio`). Add `-DryRun` to only see what it would do. Linux or no script: [manual install](docs/manual-install.md).
 
 ---
 
@@ -154,7 +155,7 @@
 | 🚀 **Performance** | Launch options for higher FPS, engine smoothness and micro-stutter fixes |
 | 🌐 **Network** | Rate settings, lower input latency, 40 ms max ping for matchmaking |
 | 👁️ **Visuals** | Custom crosshair, clean viewmodel, radar tuned for awareness, minimal HUD |
-| 🔊 **Sound** | Competitive mix, clearer footsteps, music off, MVP music at 20%, quieter agent radio lines, audible 10-second bomb warning (10%) |
+| 🔊 **Sound** | Competitive mix, clearer footsteps, music off, MVP music at 20%, quieter agent radio lines, audible 10-second bomb warning (10%), optional [footstep EQ + compressor](docs/audio-eq.md) outside the game |
 | 🧩 **Gameplay** | Fast bomb drop, AFK prevention, clutch volume boost, buy scripts, enemy team mute |
 
 </details>
@@ -177,6 +178,7 @@
 | [🎞️&nbsp;Video&nbsp;settings](docs/video-settings.md) | In-game video preset + script, fullscreen checklist, stretched res + `m_yaw`, mouse/keyboard and Windows gaming scripts |
 | [🟩&nbsp;NVIDIA&nbsp;profile](docs/nvidia-profile.md) | Download Profile Inspector, import the CS2 driver profile |
 | [🖥️&nbsp;Monitor&nbsp;settings](docs/monitor-acer-kg251q-240hz.md) | Over Drive, Black Boost, FreeSync for 240 Hz TN monitors |
+| [🎧&nbsp;Audio&nbsp;EQ](docs/audio-eq.md) | Louder footsteps, capped gunshots: CS2 frequency bands, Equalizer APO + compressor settings, G PRO X preset, FACEIT-safe |
 | [🔤&nbsp;Custom&nbsp;font](docs/custom-font.md) | Clearer menu/HUD font, apply and undo |
 
 ---

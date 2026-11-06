@@ -1,0 +1,18 @@
+# CS2 footstep layer for Equalizer APO (works with any headphones).
+# Runs after the headphone correction (cs2-headphones.txt), so it's a small tilt on top of a neutral sound.
+# Gentle on purpose: CS2's "Crisp" EQ profile (snd_headphone_eq 1) already lifts the highs, and
+# Steam Audio puts its up/down and front/back cues in 4-10 kHz, so nothing sharp goes there.
+# Details and the reasoning per band: docs/audio-eq.md
+
+# Equal to this layer's biggest boost (+3.4 dB around 3 kHz), so it can't clip.
+Preamp: -3.5 dB
+
+# Sub-bass down (-5 dB below ~40 Hz, -1 dB at 100 Hz): HE, molotov, C4 and AWP rumble.
+# No positional info lives down here; footstep thuds at 100-250 Hz stay as they are.
+Filter: ON LSC Fc 70 Hz Gain -5 dB Q 0.71
+
+# Footstep scuffs, reload clicks, defuse start, bomb beeps: the 2-4 kHz band.
+Filter: ON PK Fc 3000 Hz Gain 3 dB Q 1.0
+
+# A broad, small lift for hard surfaces (metal, tile, vents, ladders). Smooth, so the HRTF cues stay intact.
+Filter: ON PK Fc 5500 Hz Gain 1.5 dB Q 1.2
