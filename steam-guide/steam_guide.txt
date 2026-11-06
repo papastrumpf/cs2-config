@@ -1,7 +1,9 @@
 [h1]🎮 Ultimate CS2 Competitive Configuration Guide[/h1]
 
 [b]Created by Papa Strumpf[/b]
-[i]Last Updated: October 2026[/i]
+[i]Last Updated: November 2026[/i]
+
+[h1][url=https://github.com/papastrumpf/cs2-config]🔗 View config here![/url][/h1]
 
 [hr][/hr]
 
@@ -12,7 +14,7 @@
 [*]Key Bindings & Features
 [*]Performance Optimizations
 [*]Buy Scripts System
-[*]Null-Bind Movement
+[*]Advanced Movement Config
 [*]Troubleshooting
 [/list]
 
@@ -26,18 +28,22 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 [list]
 [*][b]Performance Optimized[/b] - Reduced input lag, optimized network settings
 [*][b]Smart Buy System[/b] - One-key full buys with CAPSLOCK modifier system
-[*][b]Null-Bind Movement[/b] - Last pressed direction key wins for cleaner counter-strafes
+[*][b]Advanced Movement[/b] - Frame-perfect jump binds and movement optimization
 [*][b]Quality of Life[/b] - Clutch volume, quick weapon switch, bomb drop script
 [*][b]Network Optimized[/b] - Low latency settings for competitive play (40ms max ping)
 [/list]
+
+[h1][url=https://github.com/papastrumpf/cs2-config]🔗 View config here![/url][/h1]
 
 [hr][/hr]
 
 [h1]📥 Installation Guide[/h1]
 
+[h1][url=https://github.com/papastrumpf/cs2-config]🔗 View config here![/url][/h1]
+
 [h2]⚡ Quick Install (Windows)[/h2]
 [olist]
-[*]Download and extract the ZIP (Step 1 below)
+[*]Download the ZIP from [url=https://github.com/papastrumpf/cs2-config]GitHub[/url] and extract it (Step 1 below)
 [*]Close CS2
 [*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font + Windows settings + cs2.exe fullscreen optimizations off, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only, [b]6[/b] Windows settings only (pointer precision off, no Sticky Keys popup, Game Mode on, Game DVR off, cs2.exe High priority), [b]7[/b] cs2.exe "Disable fullscreen optimizations" only (tick or untick). It backs up anything it replaces
 [*]If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
@@ -47,7 +53,7 @@ Prefer doing it by hand? Follow the manual steps below.
 
 [h2]Step 1: Download the Config from GitHub[/h2]
 [olist]
-[*]Open the GitHub page with the [b]🔗 View config here![/b] link at the top of this guide
+[*]Open the [url=https://github.com/papastrumpf/cs2-config]GitHub page[/url]
 [*]Click the green [b]<> Code[/b] button
 [*]Click [b]Download ZIP[/b]
 [*]Open your Downloads folder, right-click [b]cs2-config-main.zip[/b] → [b]Extract All…[/b] → [b]Extract[/b]
@@ -201,22 +207,6 @@ This config includes multiple performance enhancements:
 
 [hr][/hr]
 
-[h1]🚀 Null-Bind Movement[/h1]
-
-[h2]How It Works[/h2]
-[list]
-[*]W/A/S/D use null binds: when you hold two opposite keys, the last one pressed wins
-[*]Built on the analog [code]forwardback[/code] / [code]rightleft[/code] commands, one movement command per bind
-[*]Loaded automatically by autoexec ([code]exec movement/setup[/code]), no sv_cheats needed
-[/list]
-
-[spoiler][b]⚠️ Note: Since August 2024 Valve says null binds and Snap Tap are not allowed and may kick for them on official servers. Use at your own risk in matchmaking, or remove the exec movement/setup line from autoexec.[/b][/spoiler]
-
-[h2]Jumpthrow[/h2]
-No script needed: CS2 gives every grenade released on the way up of a jump the same trajectory. SPACE is a plain jump.
-
-[hr][/hr]
-
 [h1]🔧 Troubleshooting[/h1]
 
 [h2]Config Not Loading[/h2]
@@ -289,10 +279,12 @@ Created and maintained by [b]Papa Strumpf[/b]
 
 [h2]🔗 Links[/h2]
 [list]
-[*]GitHub Repository: [url=https://github.com/papastrumpf/cs2-config]CS2 Config[/url]
+[*]GitHub Repository: [url=https://github.com/papastrumpf/cs2-config]View config here![/url]
 [*]Report Issues: Open an issue on GitHub or message me on Steam (include the console output after [code]exec autoexec[/code])
 [/list]
 
 [b]Did this help?[/b] Rate it 👍 and add it to your ⭐ Favorites so more players can find it!
 
 [i]Good luck and have fun fragging![/i] 🎮
+
+[h1][url=https://github.com/papastrumpf/cs2-config]🔗 View config here![/url][/h1]
