@@ -88,6 +88,11 @@ The same script (and option **6** / **Full** in `install.bat`) also sets these. 
   ```
   powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1
   ```
+* **Network adapter power saving:** **off** on wired adapters: Green Ethernet, Power Saving Mode and Energy-Efficient Ethernet (Realtek/Intel, whichever the adapter has). Link power saving gains a desktop nothing. Needs admin (one UAC prompt) and the adapter restarts, so the network drops for a few seconds. Interrupt Moderation, offloads and RSS stay as they are: no measured CS2 difference. Separate script, undo with `-Restore`:
+
+  ```
+  powershell -ExecutionPolicy Bypass -File windows\apply-network.ps1
+  ```
 
 Set these yourself (they can't be scripted reliably):
 
@@ -95,6 +100,11 @@ Set these yourself (they can't be scripted reliably):
 * **Overlays:** turn off the ones you don't use (Discord, NVIDIA, RGB software popups). In the NVIDIA app, turn off **Game Filters and Photo Mode**, which cost up to 15% FPS. An overlay over the game can stop it from using the fast fullscreen path.
 * **Mouse:** polling rate **1000 Hz or higher** in the mouse software, and plug it into a rear motherboard USB port (no hubs, front panel or monitor ports).
 * **Core Isolation / Memory Integrity:** costs about 5–8% FPS in 2026 tests, but it's a security feature. Your choice, not something this config changes.
-* **Skip:** timer-resolution tools, HPET/`bcdedit` tweaks, MSI-mode/interrupt tweaks, Ultimate Performance power plan (Balanced is as good on a single-CCD X3D CPU). No measured CS2 benefit.
+* **Skip:** timer-resolution tools, HPET/`bcdedit` tweaks, MSI-mode/interrupt tweaks, Ultimate Performance power plan (Balanced is as good on a single-CCD X3D CPU). No measured CS2 benefit. Why some popular ones do nothing:
+  * **Timer resolution:** CS2 sets its own (`tier0.dll` calls `ZwSetTimerResolution`), and since Windows 10 2004 timer requests are per process.
+  * **MMCSS tweaks** (`SystemResponsiveness`, `Tasks\Games`, `NetworkThrottlingIndex`): CS2's game threads never join MMCSS (only SDL's audio thread does). Microsoft's docs say `SystemResponsiveness` below 10 is reset to 20 and `GPU Priority` isn't used.
+  * **`Win32PrioritySeparation`:** the default `2` already means short, variable quanta with 3:1 foreground boost (the same as `0x26`), and CS2 at High priority preempts normal threads regardless.
+  * **Exploit Protection off for cs2.exe:** `cs2.exe` and the engine DLLs aren't built with Control Flow Guard, so there's nothing to turn off; ASLR costs nothing at runtime.
+  * **Disabling SVM/IOMMU or Memory Integrity:** FACEIT relies on VBS and IOMMU and can refuse to start without them.
 
 **Next:** [NVIDIA profile](nvidia-profile.md) · [Monitor settings](monitor-acer-kg251q-240hz.md)

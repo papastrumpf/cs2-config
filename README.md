@@ -67,7 +67,7 @@
    |---|---|
    | **1. Full install** *(recommended, just press Enter)* | Config + [video settings](docs/video-settings.md) + [custom font](docs/custom-font.md) + Windows settings + cs2.exe fullscreen optimizations off |
    | **2.** Config only · **3.** Video only · **4.** Config + video · **5.** Font only | Just that part |
-   | **6.** Windows settings only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT, Game Mode on, Game DVR off, game audio no longer turned down during Discord calls, cs2.exe High priority (one admin prompt) ([details](docs/video-settings.md)) |
+   | **6.** Windows settings only | Enhance pointer precision off, pointer speed 6/11, no Sticky Keys popup when you spam SHIFT, Game Mode on, Game DVR off, game audio no longer turned down during Discord calls, cs2.exe High priority, network adapter power saving off (one admin prompt each) ([details](docs/video-settings.md)) |
    | **7.** Fullscreen optimizations only | Ticks cs2.exe's "Disable fullscreen optimizations" (or unticks it again) ([details](docs/video-settings.md)) |
    | **9.** Audio EQ *(not part of Full)* | Installs Equalizer APO + the ReaComp compressor if missing (you tick your headset once), footstep EQ + headphone correction (Logitech G PRO X preset), headset at 48 kHz ([details](docs/audio-eq.md)) |
 

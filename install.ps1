@@ -1,6 +1,7 @@
 # Installer: copies the config into CS2, applies the video preset, the custom font and the Windows
-# settings (mouse/keyboard, Game Mode, Game DVR, cs2.exe priority), then puts the launch options on your clipboard.
-# cs2.exe High priority writes to HKLM, so Full and option 6 show one admin (UAC) prompt.
+# settings (mouse/keyboard, Game Mode, Game DVR, cs2.exe priority, network adapter power saving off), then puts the
+# launch options on your clipboard. cs2.exe High priority writes to HKLM and the network adapter settings need admin,
+# so Full and option 6 show up to two admin (UAC) prompts (none for a part that's already set).
 # Easiest way: double-click install.bat and pick an option. Close CS2 first.
 #
 # Usage:
@@ -53,7 +54,7 @@ if (-not $Mode) {
     Write-Host '  3. Video settings only'
     Write-Host '  4. Config + video settings (no font)'
     Write-Host '  5. Font only'
-    Write-Host '  6. Windows settings only (mouse/keyboard, Game Mode on, Game DVR off, cs2.exe High priority)'
+    Write-Host '  6. Windows settings only (mouse/keyboard, Game Mode on, Game DVR off, cs2.exe High priority, network power saving off)'
     Write-Host '  7. cs2.exe "Disable fullscreen optimizations" only: show, tick or untick'
     Write-Host '  9. Audio EQ: installs Equalizer APO + ReaComp if missing, footstep EQ, compressor, headset at 48 kHz'
     Write-Host '  Q. Quit'
@@ -129,6 +130,10 @@ if ($doWindows) {
     Write-Host "`n[cs2.exe CPU priority]" -ForegroundColor Cyan
     & (Join-Path $PSScriptRoot 'windows\cs2-priority.ps1') -DryRun:$DryRun
     Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1 -Restore'
+
+    Write-Host "`n[Network adapter power saving]" -ForegroundColor Cyan
+    & (Join-Path $PSScriptRoot 'windows\apply-network.ps1') -DryRun:$DryRun
+    Write-Host '  Undo later: powershell -ExecutionPolicy Bypass -File windows\apply-network.ps1 -Restore'
 }
 
 if ($doFso) {

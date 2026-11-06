@@ -45,7 +45,7 @@ This comprehensive CS2 configuration is designed for competitive play, featuring
 [olist]
 [*]Download the ZIP from [url=https://github.com/papastrumpf/cs2-config]GitHub[/url] and extract it (Step 1 below)
 [*]Close CS2
-[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font + Windows settings + cs2.exe fullscreen optimizations off, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only, [b]6[/b] Windows settings only (pointer precision off, no Sticky Keys popup, Game Mode on, Game DVR off, game audio not turned down during Discord calls, cs2.exe High priority), [b]7[/b] cs2.exe "Disable fullscreen optimizations" only (tick or untick), [b]9[/b] Audio EQ for Equalizer APO (install Equalizer APO first, see Step 8). It backs up anything it replaces
+[*]In the extracted [b]cs2-config-main[/b] folder, double-click [b]install.bat[/b] and pick an option: [b]1[/b] Full install (config + video settings + font + Windows settings + cs2.exe fullscreen optimizations off, just press Enter), [b]2[/b] Config only, [b]3[/b] Video settings only, [b]4[/b] Config + video settings, [b]5[/b] Font only, [b]6[/b] Windows settings only (pointer precision off, no Sticky Keys popup, Game Mode on, Game DVR off, game audio not turned down during Discord calls, cs2.exe High priority, network adapter power saving off), [b]7[/b] cs2.exe "Disable fullscreen optimizations" only (tick or untick), [b]9[/b] Audio EQ for Equalizer APO (install Equalizer APO first, see Step 8). It backs up anything it replaces
 [*]If you installed the config, the launch options are now on your clipboard: paste them in Steam → right-click [b]Counter-Strike 2[/b] → [b]Properties[/b] → [b]General[/b] → [b]Launch Options[/b]
 [*]Start CS2 and press [b]~[/b]: you should see the bind table
 [/olist]
@@ -106,7 +106,9 @@ Sets pointer speed to 6/11 and turns Enhance pointer precision off (desktop only
 [code]powershell -ExecutionPolicy Bypass -File windows\apply-windows-input.ps1[/code]
 To start CS2 at High CPU priority every time (one admin prompt), run:
 [code]powershell -ExecutionPolicy Bypass -File windows\cs2-priority.ps1[/code]
-To undo either one, run it again with [b]-Restore[/b] at the end.
+To turn off network adapter power saving (Green Ethernet, Power Saving Mode, Energy-Efficient Ethernet; one admin prompt, the network drops for a few seconds), run:
+[code]powershell -ExecutionPolicy Bypass -File windows\apply-network.ps1[/code]
+To undo any of them, run it again with [b]-Restore[/b] at the end.
 
 [h2]Step 8: Audio EQ (Optional, Windows)[/h2]
 Makes quiet footsteps, reloads and defuses easier to hear and caps loud gunshots and HEs, outside the game. It uses the free [url=https://sourceforge.net/projects/equalizerapo/]Equalizer APO[/url] (EQ) and ReaComp (compressor). Both run inside Windows' audio engine and never touch CS2 or its files, so they're safe on FACEIT and Valve servers. Includes a headphone correction for the Logitech G PRO X, and any other headphones work with a profile from autoeq.app.
