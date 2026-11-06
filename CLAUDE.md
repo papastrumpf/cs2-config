@@ -22,7 +22,7 @@ A CS2 (Counter-Strike 2) config repository tuned for official matchmaking: keybi
 - **`guide/guide.cfg`**: `echo` table of every bind, printed to the console on load as confirmation.
 - **`README.md`**: Public landing page: centered header (badges + guide nav), a 2×3 Highlights HTML table, quick install (visible), binds (tables)/features/troubleshooting in collapsible `<details>` blocks, a Guides table and a centered footer. Keep a blank line after `<summary>` so the markdown inside renders. GitHub `> [!TIP]` alerts don't render inside `<details>`, use a plain `> 💡` quote there. In HTML table cells write `**Title**<br>Text` on one line (a newline after `<br>` adds a gap). Preview with `POST https://api.github.com/markdown` (`mode: gfm` for alerts, `markdown` for README line breaks).
 - **`docs/`**: The longer guides, each starting with a "Back to README" link: `manual-install.md` (launch options live here), `video-settings.md`, `nvidia-profile.md`, `monitor-acer-kg251q-240hz.md`, `custom-font.md`. Link between them with relative paths, not README anchors.
-- **`steam-guide/`**: Text for the Steam Community guide (title, description, body in BBCode).
+- **`steam-guide/`**: Text for the Steam Community guides (title, description, body in BBCode). `steam_guide*.txt` = the config guide (id 3523801380). `gameplay_guide*.txt` = the gameplay guide (id 3834588166; movement, peeking, holding angles, spray, roles), which links back to the config guide. Its "What Changed in 2026" section covers magazine reloads (Mar 2026), the recoil camera (Apr 2026) and silent reload (Sept 2026); keep it current when Valve changes mechanics. Neither guide mentions null binds.
 
 ## Configuration System Architecture
 

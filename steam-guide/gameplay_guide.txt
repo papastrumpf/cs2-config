@@ -1,0 +1,240 @@
+[h1]🎯 CS2 Gameplay Guide: Peeking, Angles, Movement & Spray[/h1]
+
+[b]Created by Papa Strumpf[/b]
+[i]Last Updated: November 2026[/i]
+
+Looking for binds and settings? [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3523801380]Ultimate CS2 Competitive Config[/url]
+
+[hr][/hr]
+
+[h2]📋 Table of Contents[/h2]
+[list]
+[*]What Changed in 2026
+[*]Movement
+[*]Crosshair Placement
+[*]Peeking
+[*]Holding Angles
+[*]Shooting & Spray Control
+[*]Roles & Play Style
+[*]Practice Routine
+[*]Common Mistakes
+[/list]
+
+[hr][/hr]
+
+[h1]🆕 What Changed in 2026[/h1]
+
+Three updates this year change how you should play. Most guides online were written before them.
+
+[h2]Magazine reloads (March 2026)[/h2]
+[list]
+[*]Reloading now throws away the bullets left in your magazine. Reload an AK after 5 shots and the other 25 are gone
+[*]Your reserve is counted in magazines, not single bullets. Snipers and SMGs lost the most total ammo
+[*][b]What it means:[/b] stop reloading after every kill. Reload when the magazine is close to empty, or when you have time and cover and know the next fight needs a full magazine
+[*]Count your shots on the AWP and SSG 08. Missing costs more now
+[/list]
+
+[h2]Recoil camera (April 2026)[/h2]
+[list]
+[*]Your view shakes during a spray like it did in CS:GO again
+[*]The bullets did not change: they still land where CS2 puts them
+[*][b]What it means:[/b] learn the spray from the bullet holes on the wall, not from how your screen moves
+[*]When you get shot, you now always see the full aim punch, whatever your ping. Being shot still hurts your aim straight away, so win the first bullet or get back to cover
+[/list]
+
+[h2]Silent reload (September 2026)[/h2]
+[list]
+[*]Hold R to reload without the sound. It takes longer than a normal reload
+[*]Since the October update you can set it to Toggle instead of Hold in the settings
+[*]Unscoping a sniper is silent too
+[*][b]What it means:[/b] reload silently when you're close to enemies who are listening (holding a bomb site, lurking, in a 1vX). Use the normal fast reload when they already know where you are
+[/list]
+
+[hr][/hr]
+
+[h1]🏃 Movement[/h1]
+
+[h2]Counter-strafing: stop before you shoot[/h2]
+You are only accurate when you move at about a third of your top speed or slower. Releasing the key isn't enough: your player slides for a moment. To stop instantly, tap the opposite key.
+[olist]
+[*]Moving left with [b]A[/b]? Release A and tap [b]D[/b] once
+[*]Shoot the moment you stop
+[*]Start moving again after the shot
+[/olist]
+Good counter-strafes look like this: move, stop, shoot, move. If you shoot while still sliding, the first bullet misses even with perfect aim.
+
+[b]Drill:[/b] stand in front of a wall, strafe left and right, counter-strafe and shoot one bullet each time. All the bullet holes should land in one small group.
+
+[h2]Walk, crouch and jump[/h2]
+[list]
+[*][b]Walk (SHIFT)[/b] - Silent, but slow. Use it when enemies are close and don't know you're there. Run when they already know
+[*][b]Crouch (CTRL)[/b] - A bit more accurate when spraying at range, but you're slow and an easy headshot. Crouch spray only when you're not going to move
+[*][b]Jumping[/b] - Shots in the air miss. Jump to cross gaps, jumpthrow grenades or jump peek, never to shoot
+[*][b]Jumpthrow[/b] - Throw a grenade on the way up of a jump. CS2 gives every throw the same path, no bind needed
+[/list]
+
+[h2]Sound[/h2]
+[list]
+[*]Running and landing make noise. Walking, crouch walking and standing still are silent
+[*]A noise means "here I am": move after you make one, or use it on purpose to fake a push
+[/list]
+
+[hr][/hr]
+
+[h1]🎯 Crosshair Placement[/h1]
+
+Good crosshair placement means you barely have to move your mouse when an enemy appears.
+[list]
+[*][b]Head height, always[/b] - Keep your crosshair where a head will be, on every corner, even while moving. Looking at the floor is the most common habit holding players back
+[*][b]Aim where they will appear[/b] - Put your crosshair on the edge of the corner they'll come from, not in the middle of the open area
+[*][b]Distance from the wall[/b] - Stand further back from the corner you're checking. The enemy needs to move further to reach your crosshair, and you get more time to react
+[*][b]One angle at a time[/b] - Clear angles one by one, slicing around the corner. Don't step out where three angles can see you at once
+[*][b]Pre-aim common spots[/b] - Learn where players usually stand on each map and aim there before you see them
+[/list]
+
+[hr][/hr]
+
+[h1]👀 Peeking[/h1]
+
+[h2]Peeker's advantage[/h2]
+The player who moves first sees the other one slightly earlier, because of ping and the time the server needs to tell both players. A fast peek gives the holder less time to react. That's why aggressive swings win so many duels, and why holders need to play smart (next section).
+
+[h2]Types of peeks[/h2]
+[table]
+[tr][th]Peek[/th][th]How[/th][th]When[/th][/tr]
+[tr][td][b]Jiggle peek[/b][/td][td]Tap A or D to show yourself for a split second, then go back to cover[/td][td]For info, and to bait an AWP shot. If the AWP misses, it has to rechamber: swing now[/td][/tr]
+[tr][td][b]Shoulder peek[/b][/td][td]Like a jiggle, but show only your shoulder[/td][td]Bait a shot without showing your head, then swing while they recover[/td][/tr]
+[tr][td][b]Wide swing[/b][/td][td]Run out wide at full speed, counter-strafe and shoot[/td][td]You know where the enemy is, there's one angle to clear, or you're swinging an AWP that's aiming at the close edge[/td][/tr]
+[tr][td][b]Tight peek[/b][/td][td]Step out just enough to see one spot[/td][td]Clearing one angle at a time with your crosshair on the corner edge[/td][/tr]
+[tr][td][b]Jump peek[/b][/td][td]Jump across the gap to look, land back in cover[/td][td]Spot an AWP from far away without giving it an easy shot[/td][/tr]
+[tr][td][b]Double peek[/b][/td][td]Swing with a teammate at the same time[/td][td]The enemy can only shoot one of you, the other gets the kill[/td][/tr]
+[/table]
+
+[h2]Rules for peeking[/h2]
+[list]
+[*][b]Jiggle asks, wide swing answers[/b] - No info: jiggle first. You know where they are: swing wide and commit
+[*][b]Don't peek alone into a crossfire[/b] - If two enemies can see you, the best aim in the world won't save you. Flash or wait for a teammate
+[*][b]Flash before the swing[/b] - Your own flash or a teammate's pop flash makes the swing much safer
+[*][b]Don't re-peek the same way[/b] - After a fight, the enemy expects you in the same spot. Change position, wait, or swing from another angle
+[*]Re-peek right away only if you know they're hurt or reloading
+[/list]
+
+[hr][/hr]
+
+[h1]🛡️ Holding Angles[/h1]
+
+The peeker has the advantage, so the holder needs a plan.
+
+[h2]Ways to beat the peeker[/h2]
+[list]
+[*][b]Hold tight or far back[/b] - A tight angle (close to the wall) shows only a small part of you. Holding further back gives you more time to react to a swing
+[*][b]Off-angles[/b] - Stand somewhere slightly unusual so the enemy pre-aims the wrong spot. Great for one surprise kill, but you're often exposed afterwards: get the kill, then move
+[*][b]Crossfires[/b] - Hold with a teammate so an enemy who peeks one of you is open to the other
+[*][b]Jiggle the hold[/b] - Instead of standing still, show yourself briefly and go back. The peeker loses their advantage when they don't know where you'll be
+[*][b]Fall back[/b] - You don't have to win every first duel. Give ground, wait for your team, and fight on your terms
+[/list]
+
+[h2]Rules for holding[/h2]
+[list]
+[*]Don't hold the same angle twice in a row. After a kill, or after being seen, move
+[*]Use sound: listen for footsteps and utility before the peek comes
+[*]Play off contact: when a teammate sees enemies elsewhere, rotate or reposition instead of staring at your empty angle
+[*]AWP holds: stand further back so the enemy has to cross more of your scope. Have an escape route after the shot
+[/list]
+
+[hr][/hr]
+
+[h1]🔫 Shooting & Spray Control[/h1]
+
+[h2]Tap, burst or spray[/h2]
+[table]
+[tr][th]Distance[/th][th]How to shoot[/th][/tr]
+[tr][td][b]Long[/b][/td][td]Tap: one bullet, wait for the crosshair to reset, repeat. Aim for the head[/td][/tr]
+[tr][td][b]Medium[/b][/td][td]Burst: 2 to 4 bullets, stop, burst again[/td][/tr]
+[tr][td][b]Close[/b][/td][td]Spray: hold mouse1 and pull down against the recoil[/td][/tr]
+[/table]
+Always stop before the first bullet (counter-strafe). The first bullet of a rifle is accurate when you're standing still.
+
+[h2]Rifle spray patterns[/h2]
+Every gun has a fixed pattern. Learn it once and you can control it every time.
+[list]
+[*][b]AK-47[/b] (30 bullets) - Climbs straight up for the first bullets, then swings left and right. Pull down first, then follow the side-to-side with your mouse
+[*][b]M4A4[/b] (30 bullets) - Climbs up, then drifts right, then left. The long side-to-side part makes it harder to control at the end
+[*][b]M4A1-S[/b] (20 bullets) - Mostly vertical with little side movement. The easiest rifle to spray, but only 20 bullets. Silencer stays on
+[/list]
+Practice the first 10 bullets first. Most fights are over by then.
+
+[h2]Spray tips[/h2]
+[list]
+[*][b]Spray transfer[/b] - Keep pulling down while you move to the next enemy, otherwise the second target gets your bullets over their head
+[*][b]Reset or commit[/b] - If the spray is going wrong, stop, let the crosshair reset and tap. Don't keep spraying into the ceiling
+[*][b]Pistols[/b] - Tap them. Wait for the crosshair to reset between shots, especially with the Deagle
+[*][b]AWP[/b] - Stop completely before you shoot. A moving AWP shot misses
+[*][b]Follow-recoil crosshair[/b] - The [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3523801380]config[/url] shows a crosshair that follows your spray while you hold right click with left click. It helps you see where the bullets go while learning patterns. Press N to keep it on all the time
+[/list]
+
+[hr][/hr]
+
+[h1]🧩 Roles & Play Style[/h1]
+
+[table]
+[tr][th]Role[/th][th]Job[/th][th]Good if you...[/th][/tr]
+[tr][td][b]Entry fragger[/b][/td][td]First into the site, takes the first duel[/td][td]Have fast aim and don't mind dying first[/td][/tr]
+[tr][td][b]Support[/b][/td][td]Throws utility for the team, trades the entry[/td][td]Know your grenades and like setting others up[/td][/tr]
+[tr][td][b]AWPer[/b][/td][td]Holds long sightlines, gets the opening pick[/td][td]Have calm aim and good positioning[/td][/tr]
+[tr][td][b]Lurker[/b][/td][td]Plays away from the team, catches rotations[/td][td]Are patient and good with sound and timing[/td][/tr]
+[tr][td][b]Anchor[/b][/td][td]Holds a bomb site alone on CT side[/td][td]Stay calm and stall well with utility[/td][/tr]
+[tr][td][b]IGL[/b][/td][td]Calls the strategy and the mid-round decisions[/td][td]Read the game well and talk clearly[/td][/tr]
+[/table]
+
+[h2]Solo queue tips[/h2]
+[list]
+[*][b]Stay in trade distance[/b] - Close enough to kill whoever kills your teammate, far enough that one spray can't kill you both
+[*][b]Trade, don't bait[/b] - Swing right after your teammate's fight, not five seconds later
+[*][b]Short callouts[/b] - Where, how many, how hurt: "Two B apps, one hit 80". Then stay quiet
+[*][b]Play for info[/b] - Early in the round, find out where they are before you commit
+[*][b]Fill the missing role[/b] - If nobody throws utility, become the support. Teams with roles win more
+[/list]
+
+[hr][/hr]
+
+[h1]🏋️ Practice Routine[/h1]
+
+15 to 20 minutes before you play:
+[olist]
+[*][b]Aim map, 5 min[/b] - A bot aim map from the Workshop: counter-strafe, shoot, counter-strafe. Head height only
+[*][b]Spray practice, 5 min[/b] - Spray at a wall from medium range in a private match. Look at the bullet holes, not the screen shake
+[*][b]Deathmatch, 5 to 10 min[/b] - Focus on one thing per session: counter-strafing, crosshair height or tapping at range
+[/olist]
+
+For a private practice match with bullet impacts shown (local only, needs [code]sv_cheats 1[/code]):
+[code]sv_cheats 1; sv_infinite_ammo 1; sv_showimpacts 1; mp_roundtime_defuse 60; mp_restartgame 1[/code]
+
+Watch your own demos after a loss: check your crosshair height and every death where you were moving while shooting.
+
+[hr][/hr]
+
+[h1]❌ Common Mistakes[/h1]
+
+[list]
+[*][b]Shooting while moving[/b] - Counter-strafe first, every time
+[*][b]Crosshair on the floor[/b] - Head height on every corner
+[*][b]Reloading after every kill[/b] - Since March 2026 you throw away the bullets left in the magazine
+[*][b]Re-peeking the same angle[/b] - The enemy is waiting for it
+[*][b]Wide peeking into two enemies[/b] - Flash, or bring a teammate
+[*][b]Spraying at long range[/b] - Tap or burst instead
+[*][b]Running near enemies who don't know you're there[/b] - Walk, or reload silently with a long R press
+[*][b]Holding the same spot every round[/b] - Change positions so you're harder to read
+[/list]
+
+[hr][/hr]
+
+[h2]🔗 Links[/h2]
+[list]
+[*]Binds, settings and install: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3523801380]Ultimate CS2 Competitive Config[/url]
+[*]Config files: [url=https://github.com/papastrumpf/cs2-config]GitHub[/url]
+[/list]
+
+[b]Did this help?[/b] Rate it 👍 and add it to your ⭐ Favorites so more players can find it!
+
+[i]Good luck and have fun fragging![/i] 🎮
